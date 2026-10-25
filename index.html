@@ -154,8 +154,13 @@
   .missions dd { color: var(--ink-soft); }
 
   /* À propos */
-  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
+  .about { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .about .certs { max-width: 46ch; margin: 1.5rem 0; }
   .about p { max-width: var(--measure); margin: 0 0 1rem; }
+  .portrait {
+    display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+    border-radius: 10px; border: 1px solid var(--rule); 
+  }
   .certs { list-style: none; margin: 0; padding: 0; }
   .certs li { padding: .55rem 0; border-bottom: 1px solid var(--rule); }
   .certs li:first-child { font-weight: 700; }
@@ -182,6 +187,7 @@
   /* Mobile */
   @media (max-width: 900px) {
     .hero, .about { grid-template-columns: 1fr; }
+    .portrait { max-width: 280px; }
     .steps { grid-template-columns: 1fr 1fr; }
     .offer { grid-template-columns: 1fr auto; }
     .offer p { grid-column: 1 / -1; grid-row: 2; }
@@ -302,19 +308,20 @@
 
   <section id="a-propos">
     <div class="wrap about">
+      <img class="portrait" src="david-wallemme.jpg" width="720" height="900" alt="Portrait de David Wallemme" loading="lazy">
       <div>
         <h2>À propos</h2>
         <p>Je suis David Wallemme, consultant ITSM indépendant basé à Lyon. Avant de me spécialiser dans les outils de gestion des services, j'ai passé près de dix ans en administration système, réseau et sécurité.</p>
         <p>Depuis quatre ans, j'intègre Freshservice : recueil du besoin, paramétrage, intégrations, recette et surtout formation, la partie que je préfère. Je travaille directement avec vous, sans intermédiaire, et je m'adapte à la taille de votre équipe.</p>
-        <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
+        <ul class="certs" aria-label="Certifications">
+          <li>Freshservice Expert</li>
+          <li>Freshservice Foundation</li>
+          <li>ITIL 4 Foundation</li>
+          <li>EasyVista Service Manager Foundation</li>
+          <li>Master Manager en systèmes d'information, option cybersécurité (CESI)</li>
+        </ul>
+        <p class="li-link"><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
       </div>
-      <ul class="certs" aria-label="Certifications">
-        <li>Freshservice Expert</li>
-        <li>Freshservice Foundation</li>
-        <li>ITIL 4 Foundation</li>
-        <li>EasyVista Service Manager Foundation</li>
-        <li>Master Manager en systèmes d'information, option cybersécurité (CESI)</li>
-      </ul>
     </div>
   </section>
 
