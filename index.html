@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Wallemme · Intégrateur Freshservice pour les PME</title>
+<meta name="description" content="Consultant indépendant certifié Freshservice Expert. Mise en place de Freshservice pour les PME en France et en Suisse : cadrage, paramétrage, intégrations, formation et support.">
+<link rel="canonical" href="https://wallemme.com/">
+<meta property="og:title" content="David Wallemme, intégrateur Freshservice pour les PME">
+<meta property="og:description" content="Mise en place de Freshservice pour les PME en France et en Suisse, du cadrage à la formation de vos équipes.">
+<meta property="og:url" content="https://wallemme.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=schibsted-grotesk:400,500,700,800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "David Wallemme, intégrateur Freshservice",
+  "url": "https://wallemme.com/",
+  "email": "david@wallemme.com",
+  "areaServed": ["FR", "CH"],
+  "description": "Mise en place et accompagnement Freshservice pour les PME.",
+  "founder": {"@type": "Person", "name": "David Wallemme", "sameAs": "https://www.linkedin.com/in/david-wallemme-28942a11b/"}
+}
+</script>
+<style>
+  :root {
+    --ink: #2f3437;          /* ardoise charbon : texte, titres, sections sombres */
+    --ink-soft: #5a6064;     /* ardoise moyenne : texte secondaire */
+    --paper: #f6f1e7;        /* ivoire : fond */
+    --sheet: #fcfaf5;        /* blanc crème : surface du ticket */
+    --resolved: #4f6249;     /* vert sauge profond : statut résolu, liens */
+    --pending: #b08a4e;      /* ocre doux : statut en cours, utilisé une seule fois */
+    --rule: #ddd5c6;         /* lin : filets */
+    --focus: #1f6fd1;
+    --measure: 68ch;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--resolved); text-underline-offset: .2em; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+
+  /* En-tête */
+  .top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1rem; padding-block: 1.5rem;
+  }
+  .brand { font-weight: 800; font-size: 1.125rem; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  .top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: .95rem; }
+  .top nav a { color: var(--ink-soft); text-decoration: none; }
+  .top nav a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* Hero */
+  .hero {
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center; padding-block: clamp(2.5rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+    line-height: 1.04; letter-spacing: -.025em; font-weight: 800;
+    margin: 0 0 1.5rem; max-width: 16ch;
+  }
+  .hero p.lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+  .btn {
+    display: inline-block; background: var(--ink); color: var(--paper);
+    padding: .85rem 1.4rem; border-radius: 6px; font-weight: 700; text-decoration: none;
+  }
+  .btn:hover { background: var(--resolved); color: var(--paper); }
+  .link-quiet { color: var(--ink); font-weight: 500; }
+
+  /* Ticket : l'élément signature */
+  .ticket {
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+    box-shadow: 0 1px 0 var(--rule), 0 18px 40px -24px rgba(47, 52, 55, .28);
+    font-size: .95rem; overflow: hidden;
+  }
+  .ticket-head {
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem; border-bottom: 1px solid var(--rule);
+  }
+  .ticket-id { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .status {
+    font-weight: 700; font-size: .85rem; padding: .25rem .7rem; border-radius: 999px;
+    background: #f1e6d0; color: #6f5326; white-space: nowrap;
+  }
+  .status[data-state="resolved"] { background: #e3e7da; color: #3e4f39; }
+  .ticket h2 { font-size: 1.2rem; line-height: 1.3; margin: 0; padding: 1.1rem 1.25rem .9rem; letter-spacing: -.01em; }
+  .ticket dl {
+    display: grid; grid-template-columns: auto 1fr; gap: .35rem 1.25rem;
+    margin: 0; padding: 0 1.25rem 1.1rem;
+  }
+  .ticket dt { color: var(--ink-soft); }
+  .ticket dd { margin: 0; font-weight: 500; }
+  .log { list-style: none; margin: 0; padding: .9rem 1.25rem 1.1rem; border-top: 1px solid var(--rule); background: #f8f4ec; }
+  .log li { display: grid; grid-template-columns: 1.25rem 1fr; gap: .5rem; align-items: start; padding-block: .2rem; color: var(--ink-soft); }
+  .log li::before {
+    content: ""; width: .7rem; height: .7rem; margin-top: .45rem; border-radius: 50%;
+    border: 2px solid var(--rule); background: var(--sheet);
+  }
+  .log li.done { color: var(--ink); }
+  .log li.done::before { border-color: var(--resolved); background: var(--resolved); }
+  .log li.current::before { border-color: var(--pending); }
+
+  /* Sections */
+  section { padding-block: clamp(3rem, 7vw, 5rem); border-top: 1px solid var(--rule); }
+  section > .wrap > h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem); line-height: 1.15; letter-spacing: -.02em;
+    margin: 0 0 1rem; font-weight: 800;
+  }
+  .intro { color: var(--ink-soft); max-width: var(--measure); margin: 0 0 2.5rem; }
+
+  /* Offres : une liste de prix, pas des cartes */
+  .offers { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+  .offer {
+    display: grid; grid-template-columns: 15rem 1fr 11rem; gap: .5rem 2rem;
+    padding-block: 1.5rem; border-bottom: 1px solid var(--rule); align-items: baseline;
+  }
+  .offer h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.01em; }
+  .offer .dur { display: block; color: var(--ink-soft); font-size: .95rem; font-weight: 400; margin-top: .2rem; }
+  .offer p { margin: 0; max-width: 52ch; }
+  .price { font-weight: 800; font-size: 1.3rem; white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+  .price small { display: block; font-weight: 400; font-size: .85rem; color: var(--ink-soft); }
+  .note { margin: 1.25rem 0 0; color: var(--ink-soft); font-size: .95rem; max-width: var(--measure); }
+
+  /* Déroulé : une vraie séquence, donc numérotée */
+  .steps { counter-reset: step; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+  .steps li { counter-increment: step; border-top: 2px solid var(--ink); padding-top: .9rem; }
+  .steps li::before { content: counter(step); display: block; font-weight: 800; font-size: 1.6rem; line-height: 1; margin-bottom: .6rem; color: var(--resolved); }
+  .steps h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
+  .steps p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+
+  /* Missions */
+  .missions { margin: 0; display: grid; grid-template-columns: 14rem 1fr; border-top: 2px solid var(--ink); }
+  .missions dt, .missions dd { padding-block: 1rem; border-bottom: 1px solid var(--rule); margin: 0; }
+  .missions dt { font-weight: 700; padding-right: 1.5rem; }
+  .missions dd { color: var(--ink-soft); }
+
+  /* À propos */
+  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
+  .about p { max-width: var(--measure); margin: 0 0 1rem; }
+  .certs { list-style: none; margin: 0; padding: 0; }
+  .certs li { padding: .55rem 0; border-bottom: 1px solid var(--rule); }
+  .certs li:first-child { font-weight: 700; }
+
+  /* Contact */
+  .contact { background: var(--ink); color: var(--paper); border-top: 0; }
+  .contact h2 { color: var(--paper); }
+  .contact p { max-width: var(--measure); color: #d6d1c6; }
+  .mail {
+    display: inline-block; font-size: clamp(1.6rem, 4.5vw, 2.8rem); font-weight: 800;
+    letter-spacing: -.02em; color: var(--paper); margin: .5rem 0 1.5rem; word-break: break-word;
+  }
+  .mail:hover { color: #cdd8c3; }
+  .contact a:not(.mail) { color: #cdd8c3; }
+
+  /* Pied de page et mentions */
+  footer { padding-block: 2rem 3rem; font-size: .9rem; color: var(--ink-soft); }
+  footer details { max-width: var(--measure); }
+  footer summary { cursor: pointer; color: var(--ink); font-weight: 500; }
+  footer h3 { font-size: .95rem; margin: 1.25rem 0 .25rem; color: var(--ink); }
+  footer p { margin: 0 0 .5rem; }
+  .todo { background: #f1e6d0; color: #6f5326; padding: 0 .3rem; border-radius: 3px; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .hero, .about { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .offer { grid-template-columns: 1fr auto; }
+    .offer p { grid-column: 1 / -1; grid-row: 2; }
+  }
+  @media (max-width: 600px) {
+    .top { flex-direction: column; gap: .5rem; }
+    .steps { grid-template-columns: 1fr; }
+    .missions { grid-template-columns: 1fr; }
+    .missions dt { border-bottom: 0; padding-bottom: 0; }
+    .missions dd { padding-top: .25rem; }
+    .offer { grid-template-columns: 1fr; }
+    .price { text-align: left; }
+    .offer p { grid-row: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="brand" href="#">David Wallemme</a>
+  <nav aria-label="Sections">
+    <a href="#offres">Offres et tarifs</a>
+    <a href="#missions">Missions</a>
+    <a href="#a-propos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Votre service desk sur Freshservice, prêt en quelques semaines.</h1>
+      <p class="lead">Consultant indépendant certifié Freshservice Expert, j'accompagne les PME en France et en Suisse, du cadrage des besoins à la formation de vos équipes.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:david@wallemme.com?subject=Projet%20Freshservice">Parler de votre projet</a>
+        <a class="link-quiet" href="#offres">Voir les tarifs</a>
+      </div>
+    </div>
+
+    <aside class="ticket" aria-label="Exemple : votre projet suivi comme un ticket">
+      <div class="ticket-head">
+        <span class="ticket-id">Demande n° 2026-0147</span>
+        <span class="status" id="status" data-state="open" aria-live="polite">En cours</span>
+      </div>
+      <h2>Mettre en place Freshservice dans notre entreprise</h2>
+      <dl>
+        <dt>Demandeur</dt><dd>Votre entreprise</dd>
+        <dt>Assigné à</dt><dd>David Wallemme</dd>
+        <dt>Catégorie</dt><dd>Projet ITSM</dd>
+        <dt>Délai cible</dt><dd>5 jours ouvrés</dd>
+      </dl>
+      <ol class="log" id="log">
+        <li class="done">Atelier de cadrage avec vos équipes</li>
+        <li class="done">Paramétrage incidents, demandes et portail</li>
+        <li class="current">Recette et formation des administrateurs</li>
+        <li>Mise en service</li>
+      </ol>
+    </aside>
+  </div>
+
+  <section id="offres">
+    <div class="wrap">
+      <h2>Offres et tarifs</h2>
+      <p class="intro">Des forfaits clairs pour démarrer vite, et un accompagnement au jour quand vos besoins évoluent. Le conseil sur le choix des licences Freshservice est inclus.</p>
+      <ul class="offers">
+        <li class="offer">
+          <h3>Démarrage Freshservice<span class="dur">5 jours</span></h3>
+          <p>Pour une première mise en place jusqu'à environ 100 utilisateurs : cadrage, gestion des incidents et des demandes, portail utilisateurs, SLA, premières automatisations et formation de vos administrateurs.</p>
+          <div class="price">2 750 € HT<small>forfait</small></div>
+        </li>
+        <li class="offer">
+          <h3>Déploiement complet<span class="dur">10 à 15 jours</span></h3>
+          <p>Catalogue de services, workflows d'arrivée et de départ des collaborateurs, gestion des actifs, intégrations (Active Directory / Entra ID, API), reprise de vos données existantes et formation des équipes.</p>
+          <div class="price">dès 5 500 € HT<small>sur devis</small></div>
+        </li>
+        <li class="offer">
+          <h3>Accompagnement et assistance<span class="dur">au jour</span></h3>
+          <p>Évolutions, support de vos administrateurs, audit d'une instance existante, ou pilotage de projet côté client pour des déploiements plus larges.</p>
+          <div class="price">550 € HT<small>par jour</small></div>
+        </li>
+      </ul>
+      <p class="note">Missions à distance ou sur site (région lyonnaise et Paris). Pour la Suisse, intervention à distance et déplacements ponctuels.</p>
+    </div>
+  </section>
+
+  <section id="deroule">
+    <div class="wrap">
+      <h2>Comment se déroule un projet</h2>
+      <p class="intro">Le même déroulé quelle que soit la taille du projet, adapté à votre rythme.</p>
+      <ol class="steps">
+        <li><h3>Cadrage</h3><p>On définit ensemble vos processus, vos équipes et vos priorités.</p></li>
+        <li><h3>Paramétrage</h3><p>Je configure Freshservice selon ce qui a été décidé, sans sur-mesure inutile.</p></li>
+        <li><h3>Recette</h3><p>Vos équipes testent sur des cas réels avant la mise en service.</p></li>
+        <li><h3>Formation</h3><p>Administrateurs et agents repartent autonomes sur l'outil.</p></li>
+        <li><h3>Mise en service</h3><p>Démarrage accompagné, puis suivi pendant les premières semaines.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="missions">
+    <div class="wrap">
+      <h2>Missions réalisées</h2>
+      <p class="intro">Quelques projets menés ces dernières années. Les noms des clients restent confidentiels.</p>
+      <dl class="missions">
+        <dt>Laboratoire pharmaceutique</dt>
+        <dd>Déploiement de Freshservice en plusieurs lots : incidents, demandes et catalogue de services.</dd>
+        <dt>Groupe de services aux particuliers</dt>
+        <dd>Interface entre Freshservice et l'ERP Odoo par API REST, automatisation des arrivées et des départs.</dd>
+        <dt>Secteur sport et loisirs</dt>
+        <dd>Maintenance de l'instance et automatisation des parcours d'arrivée et de départ.</dd>
+        <dt>Producteur d'énergies renouvelables</dt>
+        <dd>Mise en place complète de Freshservice, sans outil existant.</dd>
+        <dt>Grande organisation française</dt>
+        <dd>Pilotage côté client d'un programme Freshservice pour l'ensemble de ses services.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="a-propos">
+    <div class="wrap about">
+      <div>
+        <h2>À propos</h2>
+        <p>Je suis David Wallemme, consultant ITSM indépendant basé à Lyon. Avant de me spécialiser dans les outils de gestion des services, j'ai passé près de dix ans en administration système, réseau et sécurité.</p>
+        <p>Depuis quatre ans, j'intègre Freshservice : recueil du besoin, paramétrage, intégrations, recette et surtout formation, la partie que je préfère. Je travaille directement avec vous, sans intermédiaire, et je m'adapte à la taille de votre équipe.</p>
+        <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
+      </div>
+      <ul class="certs" aria-label="Certifications">
+        <li>Freshservice Expert</li>
+        <li>Freshservice Foundation</li>
+        <li>ITIL 4 Foundation</li>
+        <li>EasyVista Service Manager Foundation</li>
+        <li>Master Manager en systèmes d'information, option cybersécurité (CESI)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Parlons de votre projet</h2>
+      <p>Décrivez-moi en quelques lignes votre équipe IT et votre outil actuel. Je vous réponds sous 48 heures avec une première estimation.</p>
+      <a class="mail" href="mailto:david@wallemme.com?subject=Projet%20Freshservice">david@wallemme.com</a>
+      <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Me contacter sur LinkedIn</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 David Wallemme. Freshservice est une marque de Freshworks Inc.</p>
+  <details>
+    <summary>Mentions légales</summary>
+    <h3>Éditeur</h3>
+    <p>David Wallemme, entrepreneur individuel (micro-entreprise)<br>
+    SIRET : 898 374 400 00015<br>
+    Adresse : <span class="todo">[adresse professionnelle à compléter]</span><br>
+    Téléphone : <span class="todo">[à compléter]</span><br>
+    E-mail : <a href="mailto:david@wallemme.com">david@wallemme.com</a><br>
+    Directeur de la publication : David Wallemme</p>
+    <h3>Hébergement</h3>
+    <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+    <h3>Données personnelles</h3>
+    <p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les messages que vous m'envoyez par e-mail servent uniquement à répondre à votre demande. Vous pouvez demander leur suppression à tout moment à david@wallemme.com.</p>
+  </details>
+</footer>
+
+<script>
+  // Un seul moment animé : le ticket passe de "En cours" à "Résolu" au chargement.
+  (function () {
+    var status = document.getElementById('status');
+    var items = document.querySelectorAll('#log li');
+    function resolve() {
+      items.forEach(function (li) { li.classList.remove('current'); li.classList.add('done'); });
+      status.textContent = 'Résolu';
+      status.setAttribute('data-state', 'resolved');
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { resolve(); return; }
+    setTimeout(function () {
+      items[2].classList.remove('current'); items[2].classList.add('done');
+      items[3].classList.add('current');
+    }, 1400);
+    setTimeout(resolve, 2600);
+  })();
+</script>
+</body>
+</html>
