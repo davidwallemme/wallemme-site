@@ -178,6 +178,12 @@
   .ico { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.2em; }
   .btn .ico { margin-right: .5rem; }
   .contact a.li { display: inline-flex; align-items: center; gap: .45rem; }
+  .res { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+  .res li { border-bottom: 1px solid var(--rule); }
+  .res a { display: block; padding: 1.1rem 0; color: var(--ink); text-decoration: none; }
+  .res a strong { display: block; font-size: 1.1rem; }
+  .res a span { display: block; color: var(--ink-soft); margin-top: .2rem; }
+  .res a:hover strong { text-decoration: underline; text-underline-offset: .2em; }
   /* Hero */
   .hero {
     display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4.5rem);
@@ -340,6 +346,7 @@
   <nav aria-label="Sections">
     <a href="#offres">Offres et tarifs</a>
     <a href="#missions">Missions</a>
+    <a href="#ressources">Ressources</a>
     <a href="#a-propos">À propos</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -435,6 +442,18 @@
     </div>
   </section>
 
+  <section id="ressources">
+    <div class="wrap">
+      <h2>Ressources</h2>
+      <p class="intro">Des guides pratiques pour préparer votre projet Freshservice.</p>
+      <ul class="res">
+        <li><a href="/freshservice-vs-glpi"><strong>Freshservice ou GLPI : lequel choisir pour votre service desk ?</strong><span>Coût réel, maintenance, fonctionnalités : les critères concrets pour choisir.</span></a></li>
+        <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice ?</strong><span>Licences par agent, coût de l'intégration et budgets types.</span></a></li>
+        <li><a href="/migrer-vers-freshservice"><strong>Migrer vers Freshservice : les étapes et les pièges à éviter</strong><span>Ce qu'il faut reprendre, ce qu'il vaut mieux laisser, et comment réussir la bascule.</span></a></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="a-propos">
     <div class="wrap about">
       <img class="portrait" src="david-wallemme.jpg" width="720" height="900" alt="Portrait de David Wallemme" loading="lazy">
@@ -469,7 +488,7 @@
 
 <footer class="wrap">
   <p>© 2026 David Wallemme. Freshservice est une marque de Freshworks Inc.</p>
-  <details>
+  <details id="mentions">
     <summary>Mentions légales</summary>
     <h3>Éditeur</h3>
     <p>David Wallemme, entrepreneur individuel (micro-entreprise)<br>
