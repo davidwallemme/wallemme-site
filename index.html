@@ -67,6 +67,70 @@
  ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Faut-il déjà avoir des licences Freshservice ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Non. Vous souscrivez les licences directement auprès de Freshworks, et je vous aide à choisir l'offre adaptée à vos besoins réels, pour ne pas payer des fonctionnalités inutilisées. Ce conseil est inclus dans la mise en place."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Travaillez-vous à distance ou sur site ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Les deux. J'interviens à distance ou sur site en région lyonnaise et à Paris. Pour la Suisse, je travaille à distance avec des déplacements ponctuels, par exemple pour les ateliers de cadrage ou la formation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Mes équipes seront-elles autonomes sur l'outil ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "C'est l'objectif. Chaque projet se termine par une formation des administrateurs et des agents, sur votre propre configuration. Vous repartez capables de faire évoluer Freshservice vous-mêmes, et vous pouvez faire appel à moi ponctuellement si besoin."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous reprendre une instance Freshservice existante ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. C'est l'objet de l'audit : j'analyse votre configuration actuelle, les points de blocage et les fonctionnalités inexploitées, puis je vous remets un plan d'action priorisé. Peu importe qui a fait la mise en place initiale."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous migrer nos données depuis un autre outil ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais un devis. Plus de détails dans le guide de migration."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Freshservice peut-il servir au-delà de l'IT ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Les RH, les services généraux ou la finance peuvent avoir leur propre catalogue de demandes, avec leurs validations. J'ai par exemple mis en place des catalogues pour des demandes RH, de contrôle de gestion et de moyens généraux."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment se passe le premier échange ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Un appel de 30 minutes en visio, sans engagement. Vous me présentez votre contexte et votre outil actuel, je vous dis ce qui est réaliste et comment je m'y prendrais. Si ça vous convient, je vous envoie ensuite une proposition écrite."
+   }
+  }
+ ]
+}
+</script>
 <style>
   :root {
     --nuit: #0f1433;        /* fond des sections sombres */
@@ -279,6 +343,16 @@
   .certifs .phare { background: var(--nuit); border-color: var(--nuit); color: var(--blanc); }
   .certifs .phare svg { stroke: var(--menthe); }
   .diplome { color: var(--encre-douce); font-size: .97rem; }
+
+  /* FAQ */
+  .faq { display: grid; gap: .75rem; max-width: 52rem; }
+  .faq details { background: var(--blanc); border: 1px solid var(--filet); border-radius: 16px; }
+  .faq details[open] { border-color: var(--violet); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 1.4rem; font-family: var(--titre); font-weight: 600; font-size: 1.12rem; line-height: 1.3; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: #ece9fd; color: var(--violet-fonce); font-family: var(--texte); font-weight: 600; font-size: 1.2rem; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { margin: 0; padding: 0 1.4rem 1.25rem; color: var(--encre-douce); max-width: 70ch; }
 
   /* Contact */
   .contact { position: relative; overflow: hidden; padding-block: clamp(4rem, 9vw, 7rem); }
@@ -557,6 +631,9 @@
       <li><a href="/freshservice-vs-glpi"><strong>Freshservice ou GLPI&nbsp;: lequel choisir pour votre service desk&nbsp;?</strong><span>Coût réel, maintenance, fonctionnalités : les critères concrets pour choisir.</span><em>Lire le comparatif</em></a></li>
       <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice&nbsp;?</strong><span>Licences par agent, coût de l'intégration et budgets types.</span><em>Lire le guide des prix</em></a></li>
       <li><a href="/migrer-vers-freshservice"><strong>Migrer vers Freshservice&nbsp;: les étapes et les pièges à éviter</strong><span>Ce qu'il faut reprendre, ce qu'il vaut mieux laisser, et comment réussir la bascule.</span><em>Lire le guide de migration</em></a></li>
+      <li><a href="/freshservice-vs-servicenow"><strong>Freshservice ou ServiceNow&nbsp;: lequel choisir pour votre ITSM&nbsp;?</strong><span>Tarifs, coût de mise en œuvre et administration : le bon outil selon votre taille.</span><em>Lire le comparatif</em></a></li>
+      <li><a href="/automatiser-arrivee-depart-freshservice"><strong>Automatiser l'arrivée et le départ d'un collaborateur</strong><span>SIRH, validation du manager, tâches par équipe et coupure des accès.</span><em>Lire la méthode</em></a></li>
+      <li><a href="/freddy-ai-freshservice"><strong>Freddy AI dans Freshservice&nbsp;: ce que l'IA change</strong><span>Agent, copilote et analyse : ce que fait chaque brique, et à quelles conditions.</span><em>Lire le guide IA</em></a></li>
     </ul>
   </div>
 </section>
@@ -578,6 +655,45 @@
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>EasyVista Service Apps</li>
       </ul>
       <p class="diplome">Master Manager en systèmes d'information, option cybersécurité (CESI Lyon)</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="bloc">
+  <div class="wrap">
+    <div class="titre-bloc">
+      <h2>Questions fréquentes</h2>
+      <p>Les questions qu'on me pose le plus souvent avant de démarrer un projet.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Faut-il déjà avoir des licences Freshservice&nbsp;?</summary>
+        <p>Non. Vous souscrivez les licences directement auprès de Freshworks, et je vous aide à choisir l'offre adaptée à vos besoins réels, pour ne pas payer des fonctionnalités inutilisées. Ce conseil est inclus dans la mise en place.</p>
+      </details>
+      <details>
+        <summary>Travaillez-vous à distance ou sur site&nbsp;?</summary>
+        <p>Les deux. J'interviens à distance ou sur site en région lyonnaise et à Paris. Pour la Suisse, je travaille à distance avec des déplacements ponctuels, par exemple pour les ateliers de cadrage ou la formation.</p>
+      </details>
+      <details>
+        <summary>Mes équipes seront-elles autonomes sur l&#x27;outil&nbsp;?</summary>
+        <p>C'est l'objectif. Chaque projet se termine par une formation des administrateurs et des agents, sur votre propre configuration. Vous repartez capables de faire évoluer Freshservice vous-mêmes, et vous pouvez faire appel à moi ponctuellement si besoin.</p>
+      </details>
+      <details>
+        <summary>Pouvez-vous reprendre une instance Freshservice existante&nbsp;?</summary>
+        <p>Oui. C'est l'objet de l'audit : j'analyse votre configuration actuelle, les points de blocage et les fonctionnalités inexploitées, puis je vous remets un plan d'action priorisé. Peu importe qui a fait la mise en place initiale.</p>
+      </details>
+      <details>
+        <summary>Pouvez-vous migrer nos données depuis un autre outil&nbsp;?</summary>
+        <p>Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais un devis. Plus de détails dans le guide de migration.</p>
+      </details>
+      <details>
+        <summary>Freshservice peut-il servir au-delà de l&#x27;IT&nbsp;?</summary>
+        <p>Oui. Les RH, les services généraux ou la finance peuvent avoir leur propre catalogue de demandes, avec leurs validations. J'ai par exemple mis en place des catalogues pour des demandes RH, de contrôle de gestion et de moyens généraux.</p>
+      </details>
+      <details>
+        <summary>Comment se passe le premier échange&nbsp;?</summary>
+        <p>Un appel de 30 minutes en visio, sans engagement. Vous me présentez votre contexte et votre outil actuel, je vous dis ce qui est réaliste et comment je m'y prendrais. Si ça vous convient, je vous envoie ensuite une proposition écrite.</p>
+      </details>
     </div>
   </div>
 </section>
