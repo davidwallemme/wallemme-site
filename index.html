@@ -150,28 +150,49 @@
   .preuves svg { width: 1.1rem; height: 1.1rem; flex: none; fill: none; stroke: var(--menthe); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
   .preuves strong { color: var(--blanc); font-weight: 600; }
 
-  /* ---------- Workflow : l'élément signature ---------- */
-  .flow {
-    margin: 0; background: var(--nuit-2); border: 1px solid var(--trait-nuit); border-radius: 22px;
-    padding: 1.4rem 1.4rem 1.5rem; box-shadow: 0 30px 60px -30px rgba(5, 8, 30, .8);
+  /* ---------- Photo du hero ---------- */
+  .hero-photo { position: relative; justify-self: end; width: min(100%, 400px); margin: 0 1.1rem 1.1rem 0; }
+  .hero-photo::before { content: ""; position: absolute; inset: 1.1rem -1.1rem -1.1rem 1.1rem; border-radius: 24px; background: var(--violet); }
+  .hero-photo img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; }
+  .badge-cert {
+    position: absolute; left: -1.75rem; bottom: 2rem; margin: 0; display: flex; align-items: center; gap: .7rem;
+    padding: .75rem 1.1rem .75rem .8rem; border-radius: 16px; background: var(--nuit-2); border: 1px solid var(--trait-nuit);
+    box-shadow: 0 20px 40px -20px rgba(5, 8, 30, .9); font-size: .85rem; color: var(--texte-nuit); line-height: 1.3;
   }
-  .flow-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .badge-cert svg { width: 2rem; height: 2rem; flex: none; padding: .4rem; border-radius: 50%; background: var(--menthe); fill: none; stroke: var(--nuit); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .badge-cert strong { display: block; color: var(--blanc); font-size: 1rem; font-weight: 600; }
+
+  /* ---------- Exemple : le workflow d'arrivée ---------- */
+  .exemple { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+  .exemple h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 1.25rem; }
+  .exemple-texte p { margin: 0 0 1rem; max-width: 52ch; }
+  .exemple-texte .exemple-note { margin-top: 1.5rem; padding-left: 1rem; border-left: 3px solid var(--violet); color: var(--encre-douce); font-size: .97rem; }
+
+  /* ---------- Workflow ---------- */
+  .flow {
+    color: var(--blanc);
+    margin: 0; background: var(--nuit-2); border: 1px solid var(--trait-nuit); border-radius: 22px;
+    padding: 1.25rem 1.25rem 1.35rem; box-shadow: 0 30px 60px -30px rgba(5, 8, 30, .8);
+  }
+  .flow-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
   .flow-head p { margin: 0; font-weight: 600; font-size: .98rem; }
   .flow-head small { display: block; color: var(--texte-nuit); font-weight: 400; font-size: .85rem; }
   .pill { font-size: .8rem; font-weight: 600; padding: .3rem .75rem; border-radius: 999px; background: rgba(79, 209, 197, .14); color: var(--menthe); white-space: nowrap; }
   .pill::before { content: ""; display: inline-block; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; margin-right: .45rem; vertical-align: .08em; }
 
   .steps-flow { list-style: none; margin: 0; padding: 0; position: relative; }
-  .steps-flow::before { content: ""; position: absolute; left: 1.05rem; top: 1rem; bottom: 1rem; width: 2px; background: var(--trait-nuit); }
-  .node { position: relative; display: grid; grid-template-columns: 2.1rem 1fr; gap: .9rem; align-items: start; padding-block: .45rem; }
-  .node-ico { position: relative; z-index: 1; width: 2.1rem; height: 2.1rem; border-radius: 10px; display: grid; place-items: center; background: var(--violet); color: var(--blanc); }
-  .node-ico svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .node-body { background: var(--nuit); border: 1px solid var(--trait-nuit); border-radius: 12px; padding: .65rem .9rem; }
-  .node-type { display: block; font-size: .8rem; color: var(--lavande); }
-  .node-label { display: block; font-weight: 600; font-size: .97rem; line-height: 1.35; }
-  .node-actions { margin: .5rem 0 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
-  .node-actions li { display: flex; align-items: center; gap: .5rem; font-size: .92rem; color: var(--texte-nuit); }
-  .node-actions li::before { content: ""; width: .5rem; height: .5rem; border-radius: 2px; background: var(--lavande); flex: none; }
+  .steps-flow::before { content: ""; position: absolute; left: .95rem; top: 1rem; bottom: 1rem; width: 2px; background: var(--trait-nuit); }
+  .node { position: relative; display: grid; grid-template-columns: 1.9rem 1fr; gap: .75rem; align-items: start; padding-block: .3rem; }
+  .node-ico { position: relative; z-index: 1; width: 1.9rem; height: 1.9rem; margin-top: .35rem; border-radius: 9px; display: grid; place-items: center; background: var(--violet); color: var(--blanc); }
+  .node-ico svg { width: .95rem; height: .95rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .node-body { background: var(--nuit); border: 1px solid var(--trait-nuit); border-radius: 12px; padding: .55rem .8rem .6rem; }
+  .node-type { display: flex; justify-content: space-between; align-items: center; gap: .75rem; font-size: .8rem; color: var(--lavande); }
+  .sys { font-size: .72rem; font-weight: 600; color: var(--texte-nuit); padding: .05rem .45rem; border-radius: 5px; box-shadow: inset 0 0 0 1px var(--trait-nuit); white-space: nowrap; }
+  .node-label { display: block; font-weight: 600; font-size: .94rem; line-height: 1.35; margin-top: .1rem; }
+  .node-actions { margin: .5rem 0 0; padding: 0; list-style: none; display: grid; gap: .3rem; }
+  .node-actions li { display: grid; grid-template-columns: .45rem 1fr auto; align-items: center; gap: .55rem; font-size: .87rem; color: var(--texte-nuit); }
+  .node-actions li::before { content: ""; width: .45rem; height: .45rem; border-radius: 2px; background: var(--lavande); }
+  .node-actions em { font-style: normal; font-size: .76rem; color: var(--lavande); white-space: nowrap; }
   .node-end .node-ico { background: var(--menthe); color: var(--nuit); }
   .node-end .node-body { border-color: rgba(79, 209, 197, .45); }
 
@@ -243,10 +264,8 @@
   .guides a:hover em { text-decoration: underline; text-underline-offset: .2em; }
 
   /* À propos */
-  .apropos { display: grid; grid-template-columns: minmax(240px, 380px) 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
-  .portrait-cadre { position: relative; }
-  .portrait-cadre::before { content: ""; position: absolute; inset: 1.1rem -1.1rem -1.1rem 1.1rem; border-radius: 22px; background: var(--violet); }
-  .portrait { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
+  .apropos { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .apropos .certifs { margin-top: 0; }
   .apropos h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 1.25rem; }
   .apropos p { max-width: var(--mesure); margin: 0 0 1rem; }
   .certifs { list-style: none; margin: 2rem 0 1.25rem; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
@@ -282,7 +301,9 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 980px) {
-    .hero, .apropos { grid-template-columns: 1fr; }
+    .hero, .apropos, .exemple { grid-template-columns: 1fr; }
+    .hero-photo { justify-self: start; width: min(100% - 1.1rem, 320px); margin-left: 0; }
+    .badge-cert { left: .75rem; bottom: 1rem; }
     .hero h1 { max-width: 16ch; }
     .offres { grid-template-columns: 1fr; }
     .conditions { grid-template-columns: 1fr; }
@@ -292,7 +313,6 @@
     .etapes li::before { grid-row: 1 / 3; margin: 0; }
     .guides { grid-template-columns: 1fr; }
     .titre-bloc { grid-template-columns: 1fr; }
-    .portrait-cadre { max-width: 320px; }
   }
   @media (max-width: 760px) {
     .top { flex-wrap: wrap; }
@@ -337,41 +357,15 @@
       </div>
     </div>
 
-    <figure class="flow" id="flow" aria-label="Exemple de workflow Freshservice : l'arrivée d'un collaborateur">
-      <div class="flow-head">
-        <p>Arrivée d'un collaborateur<small>Workflow automatisé dans Freshservice</small></p>
-        <span class="pill">Terminé</span>
-      </div>
-      <ol class="steps-flow">
-        <li class="node">
-          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L4 14h7l-1 7 9-11h-7z"/></svg></span>
-          <span class="node-body"><span class="node-type">Déclencheur</span><span class="node-label">Demande d'arrivée validée par le manager</span></span>
-        </li>
-        <li class="node">
-          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a6 6 0 006 6h6M15 12l3 3-3 3M6 21v-4"/></svg></span>
-          <span class="node-body"><span class="node-type">Condition</span><span class="node-label">Poste avec ordinateur portable&nbsp;: oui</span></span>
-        </li>
-        <li class="node">
-          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
-          <span class="node-body"><span class="node-type">Actions</span><span class="node-label">Tâches créées et affectées</span>
-            <ul class="node-actions">
-              <li>Compte créé dans Entra ID</li>
-              <li>PC portable préparé par le support</li>
-              <li>Accès aux applications métier demandés</li>
-            </ul>
-          </span>
-        </li>
-        <li class="node node-end">
-          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-          <span class="node-body"><span class="node-type">Résultat</span><span class="node-label">Le collaborateur a tout ce qu'il faut à son arrivée</span></span>
-        </li>
-      </ol>
-    </figure>
+    <div class="hero-photo">
+      <img src="david-wallemme.jpg" width="720" height="900" alt="David Wallemme, consultant Freshservice">
+      <p class="badge-cert"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Freshservice Expert</strong>Certification Freshworks</span></p>
+    </div>
   </div>
 
   <div class="wrap">
     <ul class="preuves" aria-label="En bref">
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Certifié Freshservice Expert</strong></span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>10 ans</strong> d'IT système, réseau et sécurité</span></li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>4 ans</strong> d'intégration Freshservice</span></li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>ITIL 4</strong> Foundation</span></li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>France et Suisse, <strong>à distance ou sur site</strong></span></li>
@@ -411,6 +405,56 @@
       <li><strong>Migration depuis un autre outil</strong>Sur devis, après un inventaire de l'existant.</li>
       <li><strong>Où j'interviens</strong>À distance ou sur site en région lyonnaise et à Paris ; pour la Suisse, à distance avec des déplacements ponctuels.</li>
     </ul>
+  </div>
+</section>
+
+<section id="exemple" class="bloc">
+  <div class="wrap exemple">
+    <div class="exemple-texte">
+      <h2>Un exemple concret&nbsp;: l'arrivée d'un collaborateur</h2>
+      <p>Une arrivée mobilise les RH, le manager, l'IT, la logistique et les services généraux. Sans outil, tout passe par e-mail et il manque toujours quelque chose le premier jour.</p>
+      <p>Dans Freshservice, je relie votre SIRH par API et j'automatise le parcours : la demande se crée seule, le manager valide, chaque équipe reçoit sa tâche avec une échéance calée sur la date d'arrivée.</p>
+      <p class="exemple-note">Ce type de parcours s'ajoute à la mise en place, ou se construit ensuite avec le carnet de jours. Le départ d'un collaborateur suit la même logique.</p>
+    </div>
+    <figure class="flow" id="flow" aria-label="Exemple de workflow Freshservice : l'arrivée d'un collaborateur, du SIRH au premier jour">
+      <div class="flow-head">
+        <p>Arrivée d'un collaborateur<small>Du SIRH au premier jour, automatisé dans Freshservice</small></p>
+        <span class="pill">Terminé</span>
+      </div>
+      <ol class="steps-flow">
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg></span>
+          <span class="node-body"><span class="node-type">Déclencheur<span class="sys">SIRH</span></span><span class="node-label">Les RH saisissent l'embauche dans le SIRH</span></span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg></span>
+          <span class="node-body"><span class="node-type">Intégration<span class="sys">API REST</span></span><span class="node-label">Demande d'arrivée créée, champs pré-remplis</span></span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+          <span class="node-body"><span class="node-type">Validation<span class="sys">Approbation</span></span><span class="node-label">Le manager valide le poste, le matériel et les accès</span></span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+          <span class="node-body"><span class="node-type">Tickets<span class="sys">Par équipe</span></span><span class="node-label">Une tâche créée et affectée à chaque équipe</span>
+            <ul class="node-actions">
+              <li>Compte Entra ID et licence Microsoft 365<em>Support IT</em></li>
+              <li>PC portable préparé et enregistré<em>Logistique</em></li>
+              <li>Badge et poste de travail<em>Services généraux</em></li>
+              <li>Accès aux applications métier<em>Applications</em></li>
+            </ul>
+          </span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg></span>
+          <span class="node-body"><span class="node-type">Suivi<span class="sys">SLA</span></span><span class="node-label">Échéances sur la date d'arrivée, relances auto</span></span>
+        </li>
+        <li class="node node-end">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <span class="node-body"><span class="node-type">Résultat<span class="sys">Clôture</span></span><span class="node-label">Tout est prêt le jour J, RH et manager notifiés</span></span>
+        </li>
+      </ol>
+    </figure>
   </div>
 </section>
 
@@ -482,13 +526,13 @@
 
 <section id="a-propos" class="bloc">
   <div class="wrap apropos">
-    <div class="portrait-cadre">
-      <img class="portrait" src="david-wallemme.jpg" width="720" height="900" alt="Portrait de David Wallemme" loading="lazy">
-    </div>
     <div>
       <h2>À propos</h2>
       <p>Je suis David Wallemme, consultant ITSM indépendant basé à Lyon. Avant de me spécialiser dans les outils de gestion des services, j'ai passé près de dix ans en administration système, réseau et sécurité.</p>
       <p>Depuis quatre ans, j'intègre Freshservice : recueil du besoin, paramétrage, intégrations, recette et surtout formation, la partie que je préfère. Je travaille directement avec vous, sans intermédiaire, et je m'adapte à la taille de votre équipe.</p>
+      <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
+    </div>
+    <div>
       <ul class="certifs" aria-label="Certifications">
         <li class="phare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Freshservice Expert</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Freshservice Foundation</li>
@@ -497,7 +541,6 @@
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>EasyVista Service Apps</li>
       </ul>
       <p class="diplome">Master Manager en systèmes d'information, option cybersécurité (CESI Lyon)</p>
-      <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
     </div>
   </div>
 </section>
@@ -536,20 +579,25 @@
 </footer>
 
 <script>
-  // Un seul moment animé : le workflow s'exécute une fois au chargement.
+  // Un seul moment animé : le workflow s'exécute une fois, quand il apparaît à l'écran.
   (function () {
     var flow = document.getElementById('flow');
-    if (!flow) return;
+    if (!flow || !('IntersectionObserver' in window)) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce) return;
     var nodes = flow.querySelectorAll('.node');
     flow.classList.add('armed');
-    nodes.forEach(function (n, i) {
-      setTimeout(function () {
-        n.classList.add('on');
-        if (i === nodes.length - 1) flow.classList.add('done');
-      }, 500 + i * 650);
-    });
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      nodes.forEach(function (n, i) {
+        setTimeout(function () {
+          n.classList.add('on');
+          if (i === nodes.length - 1) flow.classList.add('done');
+        }, 250 + i * 550);
+      });
+    }, { threshold: 0.35 });
+    io.observe(flow);
   })();
 </script>
 </body>
