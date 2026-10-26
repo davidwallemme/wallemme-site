@@ -245,14 +245,19 @@
   .etapes h3 { font-size: 1.2rem; margin: 0 0 .4rem; }
   .etapes p { margin: 0; color: var(--texte-nuit); font-size: .97rem; }
 
-  /* Missions */
-  .missions { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-  .mission { background: var(--blanc); border: 1px solid var(--filet); border-radius: 18px; padding: 1.5rem 1.6rem; }
-  .mission h3 { font-size: 1.2rem; margin: 0 0 .45rem; }
-  .mission p { margin: 0 0 1rem; color: var(--encre-douce); }
-  .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
-  .tags li { font-size: .82rem; font-weight: 600; padding: .2rem .55rem; border-radius: 6px; background: #ece9fd; color: var(--violet-fonce); }
-  .mission-large { grid-column: 1 / -1; }
+  /* Références */
+  .refs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .ref { background: var(--blanc); border: 1px solid var(--filet); border-radius: 18px; padding: 1.6rem 1.7rem; }
+  .ref:first-child { grid-column: 1 / -1; background: var(--nuit); border-color: var(--nuit); color: var(--blanc); }
+  .ref-chiffre { margin: 0 0 1rem; display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+  .ref-chiffre strong { font-family: var(--titre); font-weight: 800; font-size: clamp(2.3rem, 4vw, 3rem); line-height: 1; letter-spacing: -.035em; color: var(--violet); font-variant-numeric: tabular-nums; }
+  .ref-chiffre span { color: var(--encre-douce); font-weight: 600; }
+  .ref:first-child .ref-chiffre strong { color: var(--lavande); }
+  .ref:first-child .ref-chiffre span, .ref:first-child .desc { color: var(--texte-nuit); }
+  .ref h3 { font-size: 1.25rem; margin: 0 0 .3rem; }
+  .ref .contexte { margin: 0 0 .7rem; font-weight: 600; color: var(--violet-fonce); font-size: .97rem; }
+  .ref:first-child .contexte { color: var(--lavande); }
+  .ref .desc { margin: 0; color: var(--encre-douce); max-width: 70ch; }
 
   /* Ressources */
   .guides { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
@@ -268,7 +273,7 @@
   .apropos .certifs { margin-top: 0; }
   .apropos h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 1.25rem; }
   .apropos p { max-width: var(--mesure); margin: 0 0 1rem; }
-  .certifs { list-style: none; margin: 2rem 0 1.25rem; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+  .certifs { list-style: none; margin: 0 0 1.25rem; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
   .certifs li { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .95rem; border-radius: 999px; background: var(--blanc); border: 1px solid var(--filet); font-weight: 600; font-size: .95rem; }
   .certifs svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: var(--violet); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
   .certifs .phare { background: var(--nuit); border-color: var(--nuit); color: var(--blanc); }
@@ -285,9 +290,25 @@
   .contact h2 { font-size: clamp(2.3rem, 5vw, 3.8rem); line-height: 1.02; letter-spacing: -.03em; margin: 0 auto 1.25rem; max-width: 16ch; }
   .contact p { color: var(--texte-nuit); max-width: 54ch; margin: 0 auto 2.25rem; }
   .contact .actions { justify-content: center; }
-  .contact .mail { display: inline-block; margin-top: 2.25rem; font-family: var(--titre); font-weight: 800; font-size: clamp(1.4rem, 3.4vw, 2.1rem); letter-spacing: -.02em; color: var(--blanc); text-decoration: none; }
-  .sombre .contact .mail, .contact a.mail { color: var(--blanc); }
-  .contact .mail:hover { text-decoration: underline; text-decoration-color: var(--lavande); }
+  .ecrire { max-width: 42rem; margin: 3rem auto 0; padding: clamp(1.25rem, 4vw, 2rem); text-align: left; background: var(--nuit-2); border: 1px solid var(--trait-nuit); border-radius: 18px; }
+  .ecrire h3 { font-size: 1.35rem; margin: 0 0 1.25rem; }
+  .champs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .champs label { display: grid; gap: .4rem; font-size: .92rem; font-weight: 600; color: var(--texte-nuit); }
+  .champs .large { grid-column: 1 / -1; }
+  .champs input, .champs textarea {
+    width: 100%; font: inherit; font-weight: 400; font-size: 1rem; color: var(--blanc);
+    background: var(--nuit); border: 1px solid var(--trait-nuit); border-radius: 10px; padding: .75rem .9rem;
+  }
+  .champs textarea { resize: vertical; min-height: 8rem; }
+  .champs input:focus, .champs textarea:focus { outline: none; border-color: var(--lavande); box-shadow: 0 0 0 3px rgba(182, 166, 255, .25); }
+  .champs ::placeholder { color: #8187b3; }
+  .piege { position: absolute; left: -9999px; }
+  .envoi { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; margin-top: 1.25rem; }
+  .envoi .btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+  .envoi .btn[disabled] { opacity: .6; cursor: wait; }
+  .contact .etat { margin: 0; max-width: none; font-size: .95rem; color: var(--texte-nuit); }
+  .etat.ok { color: var(--menthe); }
+  .contact .autres { display: flex; justify-content: center; gap: 1.75rem; margin: 2rem auto 0; font-weight: 600; }
 
   /* Pied de page */
   footer { background: var(--nuit); color: var(--texte-nuit); font-size: .92rem; border-top: 1px solid var(--trait-nuit); }
@@ -302,6 +323,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 980px) {
     .hero, .apropos, .exemple { grid-template-columns: 1fr; }
+    .guides { grid-template-columns: 1fr; }
     .hero-photo { justify-self: start; width: min(100% - 1.1rem, 320px); margin-left: 0; }
     .badge-cert { left: .75rem; bottom: 1rem; }
     .hero h1 { max-width: 16ch; }
@@ -311,14 +333,14 @@
     .etapes::before { top: 1.4rem; bottom: 1.4rem; left: 1.35rem; right: auto; width: 2px; height: auto; }
     .etapes li { display: grid; grid-template-columns: 2.8rem 1fr; column-gap: 1.1rem; }
     .etapes li::before { grid-row: 1 / 3; margin: 0; }
-    .guides { grid-template-columns: 1fr; }
     .titre-bloc { grid-template-columns: 1fr; }
   }
   @media (max-width: 760px) {
     .top { flex-wrap: wrap; }
+    .champs { grid-template-columns: 1fr; }
     .top nav { order: 3; width: 100%; gap: 1.1rem; overflow-x: auto; padding-bottom: .25rem; font-size: .93rem; }
     .top nav a { white-space: nowrap; }
-    .missions { grid-template-columns: 1fr; }
+    .refs { grid-template-columns: 1fr; }
     footer .wrap { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
@@ -338,7 +360,7 @@
     </a>
     <nav aria-label="Sections">
       <a href="#offres">Offres et tarifs</a>
-      <a href="#missions">Missions</a>
+      <a href="#references">Références</a>
       <a href="#ressources">Ressources</a>
       <a href="#a-propos">À propos</a>
       <a href="#contact">Contact</a>
@@ -474,37 +496,52 @@
   </div>
 </section>
 
-<section id="missions" class="bloc">
+<section id="references" class="bloc">
   <div class="wrap">
     <div class="titre-bloc">
-      <h2>Missions réalisées</h2>
+      <h2>Références</h2>
       <p>Quelques projets menés ces dernières années. Les noms des clients restent confidentiels.</p>
     </div>
-    <ul class="missions">
-      <li class="mission">
-        <h3>Laboratoire pharmaceutique</h3>
-        <p>Déploiement de Freshservice en plusieurs lots : incidents, demandes et catalogue de services.</p>
-        <ul class="tags"><li>Déploiement</li><li>Catalogue de services</li></ul>
+    <ul class="refs">
+      <li class="ref">
+        <p class="ref-chiffre"><strong>3 500</strong><span>collaborateurs</span></p>
+        <div>
+          <h3>Groupe de services aux particuliers</h3>
+          <p class="contexte">5 à 10 arrivées ou départs chaque semaine</p>
+          <p class="desc">Interface entre Freshservice et l'ERP Odoo par API REST : chaque arrivée ou départ enregistré dans Odoo déclenche automatiquement son processus dans Freshservice.</p>
+        </div>
       </li>
-      <li class="mission">
-        <h3>Groupe de services aux particuliers</h3>
-        <p>Interface entre Freshservice et l'ERP Odoo par API REST.</p>
-        <ul class="tags"><li>Intégration</li><li>API REST</li><li>Odoo</li></ul>
+      <li class="ref">
+        <p class="ref-chiffre"><strong>1 000</strong><span>utilisateurs</span></p>
+        <div>
+          <h3>Laboratoire pharmaceutique</h3>
+          <p class="contexte">Une DSI de 20 personnes</p>
+          <p class="desc">Déploiement de Freshservice en plusieurs lots : incidents, demandes et catalogue de services.</p>
+        </div>
       </li>
-      <li class="mission">
-        <h3>Secteur sport et loisirs</h3>
-        <p>Maintenance de l'instance et automatisation des parcours d'arrivée et de départ.</p>
-        <ul class="tags"><li>Maintenance</li><li>Workflows</li></ul>
+      <li class="ref">
+        <p class="ref-chiffre"><strong>200</strong><span>collaborateurs</span></p>
+        <div>
+          <h3>Secteur sport et loisirs</h3>
+          <p class="contexte">Prestataires, contrats courts et profils à confidentialité renforcée</p>
+          <p class="desc">Maintenance de l'instance et automatisation des arrivées et des départs, avec des parcours adaptés à chaque type de contrat.</p>
+        </div>
       </li>
-      <li class="mission">
-        <h3>Producteur d'énergies renouvelables</h3>
-        <p>Mise en place complète de Freshservice, sans outil existant.</p>
-        <ul class="tags"><li>Mise en place</li></ul>
+      <li class="ref">
+        <p class="ref-chiffre"><strong>60</strong><span>demandes au catalogue</span></p>
+        <div>
+          <h3>Opérateur de fret ferroviaire</h3>
+          <p class="contexte">Freshservice au-delà de l'IT : RH et contrôle de gestion</p>
+          <p class="desc">Mise en place d'une nouvelle plateforme Freshservice pour les demandes RH et de contrôle de gestion, avec un circuit de validation pour chaque demande.</p>
+        </div>
       </li>
-      <li class="mission mission-large">
-        <h3>Grande organisation française</h3>
-        <p>Pilotage côté client d'un programme Freshservice pour l'ensemble de ses services.</p>
-        <ul class="tags"><li>Pilotage de programme</li></ul>
+      <li class="ref">
+        <p class="ref-chiffre"><strong>30</strong><span>nouvelles demandes</span></p>
+        <div>
+          <h3>Association nationale de protection animale</h3>
+          <p class="contexte">5 agents de proximité équipés de l'application mobile</p>
+          <p class="desc">Catalogue de services dédié aux moyens généraux et déploiement de l'application mobile Freshservice pour les équipes sur le terrain.</p>
+        </div>
       </li>
     </ul>
   </div>
@@ -548,12 +585,30 @@
 <section id="contact" class="sombre contact">
   <div class="wrap">
     <h2>Parlons de votre projet Freshservice</h2>
-    <p>Réservez un appel en visio pour présenter votre besoin, ou décrivez-moi en quelques lignes votre équipe IT et votre outil actuel : je vous réponds sous 48 heures avec une première estimation.</p>
+    <p>Réservez un appel en visio pour présenter votre besoin, ou écrivez-moi en quelques lignes : je vous réponds sous 48 heures avec une première estimation.</p>
     <div class="actions">
       <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel de 30 min</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Me contacter sur LinkedIn</a>
     </div>
-    <a class="mail" href="mailto:david@wallemme.com?subject=Projet%20Freshservice">david@wallemme.com</a>
+
+    <form class="ecrire" id="ecrire" action="https://api.web3forms.com/submit" method="POST">
+      <h3>Ou écrivez-moi directement</h3>
+      <input type="hidden" name="access_key" value="5f7fbdb8-c337-4dfd-80f8-012671d96c4d">
+      <input type="hidden" name="subject" value="Nouveau message depuis wallemme.com">
+      <input type="hidden" name="from_name" value="wallemme.com">
+      <input type="checkbox" name="botcheck" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="champs">
+        <label>Nom<input type="text" name="name" autocomplete="name" required></label>
+        <label>Entreprise<input type="text" name="entreprise" autocomplete="organization"></label>
+        <label class="large">E-mail professionnel<input type="email" name="email" autocomplete="email" required></label>
+        <label class="large">Votre message<textarea name="message" rows="5" required placeholder="Votre équipe IT, votre outil actuel et ce que vous aimeriez améliorer."></textarea></label>
+      </div>
+      <div class="envoi">
+        <button class="btn" type="submit">Envoyer le message</button>
+        <p class="etat" id="etat" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <p class="autres"><a href="mailto:david@wallemme.com?subject=Projet%20Freshservice">david@wallemme.com</a><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">LinkedIn</a></p>
   </div>
 </section>
 
@@ -573,7 +628,7 @@
       <h3>Hébergement</h3>
       <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
       <h3>Données personnelles</h3>
-      <p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les messages que vous m'envoyez par e-mail servent uniquement à répondre à votre demande. Vous pouvez demander leur suppression à tout moment à david@wallemme.com.</p>
+      <p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les messages envoyés depuis le formulaire de contact transitent par le service Web3Forms, qui me les transmet par e-mail. Ces messages, comme ceux reçus directement par e-mail, servent uniquement à répondre à votre demande. Vous pouvez demander leur suppression à tout moment à david@wallemme.com.</p>
     </details>
   </div>
 </footer>
@@ -598,6 +653,30 @@
       });
     }, { threshold: 0.35 });
     io.observe(flow);
+  })();
+</script>
+<script>
+  // Envoi du formulaire sans quitter la page ; sans JavaScript, l'envoi classique fonctionne aussi.
+  (function () {
+    var form = document.getElementById('ecrire');
+    if (!form || !window.fetch) return;
+    var etat = document.getElementById('etat');
+    var bouton = form.querySelector('button[type=submit]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      bouton.disabled = true; etat.className = 'etat'; etat.textContent = 'Envoi en cours…';
+      fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.success) throw new Error();
+          form.reset(); etat.className = 'etat ok';
+          etat.textContent = 'Message envoyé. Je vous réponds sous 48 heures.';
+        })
+        .catch(function () {
+          etat.textContent = "L'envoi n'a pas abouti. Écrivez-moi directement à david@wallemme.com.";
+        })
+        .finally(function () { bouton.disabled = false; });
+    });
   })();
 </script>
 </body>
