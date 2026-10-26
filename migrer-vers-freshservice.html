@@ -39,7 +39,23 @@ a{color:var(--violet);text-underline-offset:.2em}a:hover{color:var(--violet-fonc
 .brand{display:inline-flex;align-items:center;gap:.65rem;color:var(--blanc);text-decoration:none;font-family:var(--titre);font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
 .brand svg{width:2rem;height:2rem;flex:none}
 .top nav{display:flex;align-items:center;gap:1.6rem;font-size:.97rem}
-.top nav a{color:var(--texte-nuit);text-decoration:none}.top nav a:hover{color:var(--blanc)}
+/* En-tête fixe qui s'adapte au fond */
+.barre{position:sticky;top:0;z-index:50;background:var(--nuit);color:var(--blanc);border-bottom:1px solid transparent;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.barre.defile{background:rgba(15,20,51,.88);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border-bottom-color:rgba(43,51,105,.8)}
+.barre.clair{background:rgba(243,242,251,.9);color:var(--encre);border-bottom-color:var(--filet)}
+.barre .top{padding-block:.9rem}
+.barre .brand,.barre a.brand{color:inherit}
+.barre nav a{position:relative;color:var(--texte-nuit);text-decoration:none;transition:color .2s ease}
+.barre nav a:hover,.barre nav a[aria-current="true"]{color:var(--blanc)}
+.barre.clair nav a{color:var(--encre-douce)}
+.barre.clair nav a:hover,.barre.clair nav a[aria-current="true"]{color:var(--encre)}
+.barre nav a[aria-current="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-.3rem;height:2px;border-radius:2px;background:var(--lavande)}
+.barre.clair nav a[aria-current="true"]::after{background:var(--violet)}
+.barre:not(.clair) :focus-visible{outline-color:var(--lavande)}
+.barre .btn{color:var(--blanc)}
+section[id],#top{scroll-margin-top:var(--barre-h,5.5rem)}
+@media (max-width:760px){.barre .top{padding-block:.7rem}.barre nav{padding-bottom:.45rem}}
+@media (prefers-reduced-motion:reduce){.barre{transition:none}}
 .tete{position:relative;overflow:hidden}
 .tete::before{content:"";position:absolute;inset:auto -10% -60% 40%;height:120%;background:radial-gradient(closest-side,rgba(106,76,245,.4),rgba(106,76,245,0) 70%);pointer-events:none}
 .tete-article{position:relative;width:min(48rem,100% - 2.5rem);margin-inline:auto;padding-block:clamp(2rem,6vw,4rem) clamp(2.5rem,6vw,4rem)}
@@ -82,8 +98,8 @@ footer p{margin:0}footer a{color:var(--lavande)}
 </style>
 </head>
 <body>
-<div class="sombre tete">
-  <header class="wrap top">
+<header class="barre" id="barre">
+  <div class="wrap top">
     <a class="brand" href="/"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#6a4cf5"/><path d="M18 33.5l9 9L46.5 23" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>David Wallemme</a>
     <nav aria-label="Sections">
       <a href="/#offres">Offres et tarifs</a>
@@ -92,7 +108,9 @@ footer p{margin:0}footer a{color:var(--lavande)}
       <a href="/#a-propos">À propos</a>
       <a href="/#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
+<div class="sombre tete">
   <div class="tete-article">
     <p class="crumb"><a href="/">Accueil</a> / <a href="/#ressources">Ressources</a></p>
     <h1>Migrer vers Freshservice&nbsp;: les étapes et les pièges à éviter</h1>
@@ -155,6 +173,32 @@ footer p{margin:0}footer a{color:var(--lavande)}
 </article>
 </main>
 <footer class="sombre"><div class="wrap"><p>© 2026 David Wallemme. Freshservice est une marque de Freshworks Inc.</p><p><a href="/#mentions">Mentions légales</a></p></div></footer>
+<script>
+  // En-tête : couleur adaptée au fond, section en cours surlignée, ancres non masquées.
+  (function () {
+    var barre = document.getElementById('barre');
+    if (!barre) return;
+    var racine = document.documentElement;
+    var liens = Array.prototype.slice.call(barre.querySelectorAll('nav a[href^="#"]'));
+    var cibles = liens.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var attente = false;
+    function hauteur() { racine.style.setProperty('--barre-h', barre.offsetHeight + 'px'); }
+    function maj() {
+      var h = barre.offsetHeight;
+      var dessous = document.elementsFromPoint(20, h + 1).filter(function (e) { return !barre.contains(e); })[0];
+      barre.classList.toggle('clair', !(dessous && dessous.closest('.sombre, footer')));
+      barre.classList.toggle('defile', window.scrollY > 4);
+      var actif = -1;
+      cibles.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= h + 60) actif = i; });
+      if (window.innerHeight + window.scrollY >= racine.scrollHeight - 4 && cibles.length) actif = cibles.length - 1;
+      liens.forEach(function (a, i) { if (i === actif) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    }
+    function demande() { if (!attente) { attente = true; requestAnimationFrame(function () { attente = false; maj(); }); } }
+    window.addEventListener('scroll', demande, { passive: true });
+    window.addEventListener('resize', function () { hauteur(); demande(); });
+    hauteur(); maj();
+  })();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f15b85454eae41959976dcf3fc8c119f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
