@@ -18,9 +18,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#2f3437">
+<meta name="theme-color" content="#0f1433">
 <link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=schibsted-grotesk:400,500,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=bricolage-grotesque:600,800|instrument-sans:400,500,600,700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -31,76 +31,21 @@
    "name": "David Wallemme, intégrateur Freshservice",
    "url": "https://wallemme.com/",
    "email": "david@wallemme.com",
-   "telephone": "+33618300424",
    "image": "https://wallemme.com/partage.png",
    "logo": "https://wallemme.com/apple-touch-icon.png",
    "priceRange": "€€",
-   "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Villeurbanne",
-    "postalCode": "69100",
-    "addressRegion": "Auvergne-Rhône-Alpes",
-    "addressCountry": "FR"
-   },
-   "areaServed": [
-    {
-     "@type": "Country",
-     "name": "France"
-    },
-    {
-     "@type": "Country",
-     "name": "Suisse"
-    }
-   ],
+   "address": {"@type": "PostalAddress", "addressLocality": "Villeurbanne", "postalCode": "69100", "addressRegion": "Auvergne-Rhône-Alpes", "addressCountry": "FR"},
+   "areaServed": [{"@type": "Country", "name": "France"}, {"@type": "Country", "name": "Suisse"}],
    "description": "Mise en place, audit et accompagnement de Freshservice (ITSM) par un consultant certifié Freshservice Expert.",
-   "knowsAbout": [
-    "Freshservice",
-    "ITSM",
-    "ITIL 4",
-    "Service desk",
-    "EasyVista",
-    "Gestion des services IT"
-   ],
-   "founder": {
-    "@id": "https://wallemme.com/#david"
-   },
+   "knowsAbout": ["Freshservice", "ITSM", "ITIL 4", "Service desk", "EasyVista", "Gestion des services IT"],
+   "founder": {"@id": "https://wallemme.com/#david"},
    "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Offres Freshservice",
     "itemListElement": [
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Mise en place de Freshservice"
-      },
-      "priceSpecification": {
-       "@type": "PriceSpecification",
-       "minPrice": 3600,
-       "priceCurrency": "EUR"
-      }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Audit et plan d'action Freshservice"
-      },
-      "priceSpecification": {
-       "@type": "PriceSpecification",
-       "minPrice": 1500,
-       "priceCurrency": "EUR"
-      }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Carnet de 10 jours d'accompagnement"
-      },
-      "price": 6800,
-      "priceCurrency": "EUR"
-     }
+     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en place de Freshservice"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 3600, "priceCurrency": "EUR"}},
+     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Audit et plan d'action Freshservice"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "EUR"}},
+     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Carnet de 10 jours d'accompagnement"}, "price": 6800, "priceCurrency": "EUR"}
     ]
    }
   },
@@ -110,23 +55,13 @@
    "name": "David Wallemme",
    "jobTitle": "Consultant ITSM, intégrateur Freshservice",
    "image": "https://wallemme.com/david-wallemme.jpg",
-   "sameAs": [
-    "https://www.linkedin.com/in/david-wallemme-28942a11b/",
-    "https://www.malt.fr/profile/davidw"
-   ],
+   "sameAs": ["https://www.linkedin.com/in/david-wallemme-28942a11b/", "https://www.malt.fr/profile/davidw"],
    "hasCredential": [
-    {
-     "@type": "EducationalOccupationalCredential",
-     "name": "Freshservice Expert"
-    },
-    {
-     "@type": "EducationalOccupationalCredential",
-     "name": "Freshservice Foundation"
-    },
-    {
-     "@type": "EducationalOccupationalCredential",
-     "name": "ITIL 4 Foundation"
-    }
+    {"@type": "EducationalOccupationalCredential", "name": "Freshservice Expert"},
+    {"@type": "EducationalOccupationalCredential", "name": "Freshservice Foundation"},
+    {"@type": "EducationalOccupationalCredential", "name": "ITIL 4 Foundation"},
+    {"@type": "EducationalOccupationalCredential", "name": "EasyVista Service Manager"},
+    {"@type": "EducationalOccupationalCredential", "name": "EasyVista Service Apps"}
    ]
   }
  ]
@@ -134,15 +69,22 @@
 </script>
 <style>
   :root {
-    --ink: #2f3437;          /* ardoise charbon : texte, titres, sections sombres */
-    --ink-soft: #5a6064;     /* ardoise moyenne : texte secondaire */
-    --paper: #f6f1e7;        /* ivoire : fond */
-    --sheet: #fcfaf5;        /* blanc crème : surface du ticket */
-    --resolved: #4f6249;     /* vert sauge profond : statut résolu, liens */
-    --pending: #b08a4e;      /* ocre doux : statut en cours, utilisé une seule fois */
-    --rule: #ddd5c6;         /* lin : filets */
-    --focus: #1f6fd1;
-    --measure: 68ch;
+    --nuit: #0f1433;        /* fond des sections sombres */
+    --nuit-2: #181f4a;      /* surfaces sur fond sombre */
+    --trait-nuit: #2b3369;  /* filets sur fond sombre */
+    --texte-nuit: #c7cae6;  /* texte secondaire sur fond sombre */
+    --violet: #6a4cf5;      /* boutons, liens, accent principal */
+    --violet-fonce: #5536e0;
+    --lavande: #b6a6ff;     /* accent sur fond sombre */
+    --menthe: #4fd1c5;      /* état « terminé », rare */
+    --brume: #f3f2fb;       /* fond des sections claires */
+    --blanc: #ffffff;
+    --encre: #171b3a;       /* texte sur fond clair */
+    --encre-douce: #565b7a;
+    --filet: #dfdcf0;
+    --titre: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+    --texte: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mesure: 66ch;
   }
 
   * { box-sizing: border-box; }
@@ -150,377 +92,464 @@
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.6;
+    margin: 0; background: var(--brume); color: var(--encre);
+    font-family: var(--texte); font-size: 1.0625rem; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3 { font-family: var(--titre); font-weight: 800; letter-spacing: -.02em; }
+  a { color: var(--violet); text-underline-offset: .2em; }
+  a:hover { color: var(--violet-fonce); }
+  :focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
+  .sombre :focus-visible { outline-color: var(--lavande); }
+  img { max-width: 100%; }
 
-  a { color: var(--resolved); text-underline-offset: .2em; }
-  a:hover { color: var(--ink); }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+  .wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
 
-  .wrap { width: min(1120px, 100% - 2rem); margin-inline: auto; }
-
-  /* En-tête */
-  .top {
-    display: flex; justify-content: space-between; align-items: baseline;
-    gap: 1rem; padding-block: 1.5rem;
-  }
-  .brand { font-weight: 800; font-size: 1.125rem; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
-  .top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: .95rem; }
-  .top nav a { color: var(--ink-soft); text-decoration: none; }
-  .top nav a:hover { color: var(--ink); text-decoration: underline; }
-
-  .ico { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.2em; }
-  .btn .ico { margin-right: .5rem; }
-  .contact a.li { display: inline-flex; align-items: center; gap: .45rem; }
-  .res { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
-  .res li { border-bottom: 1px solid var(--rule); }
-  .res a { display: block; padding: 1.1rem 0; color: var(--ink); text-decoration: none; }
-  .res a strong { display: block; font-size: 1.1rem; }
-  .res a span { display: block; color: var(--ink-soft); margin-top: .2rem; }
-  .res a:hover strong { text-decoration: underline; text-underline-offset: .2em; }
-  /* Hero */
-  .hero {
-    display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4.5rem);
-    align-items: center; padding-block: clamp(2.5rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem);
-  }
-  .hero h1 {
-    font-size: clamp(2.3rem, 5.2vw, 3.9rem);
-    line-height: 1.04; letter-spacing: -.025em; font-weight: 800;
-    margin: 0 0 1.5rem; max-width: 16ch;
-  }
-  .hero p.lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 2rem; }
-  .actions { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+  /* ---------- Boutons ---------- */
   .btn {
-    display: inline-block; background: var(--ink); color: var(--paper);
-    padding: .85rem 1.4rem; border-radius: 6px; font-weight: 700; text-decoration: none;
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: .9rem 1.5rem; border-radius: 999px;
+    background: var(--violet); color: var(--blanc);
+    font-weight: 600; text-decoration: none; line-height: 1.2;
+    transition: background-color .15s ease;
   }
-  .btn:hover { background: var(--resolved); color: var(--paper); }
-  .link-quiet { color: var(--ink); font-weight: 500; }
+  .btn:hover { background: var(--violet-fonce); color: var(--blanc); }
+  .btn-ghost { background: transparent; color: var(--blanc); box-shadow: inset 0 0 0 1.5px var(--trait-nuit); }
+  .btn-ghost:hover { background: var(--nuit-2); color: var(--blanc); }
+  .btn svg { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-  /* Ticket : l'élément signature */
-  .ticket {
-    background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
-    box-shadow: 0 1px 0 var(--rule), 0 18px 40px -24px rgba(47, 52, 55, .28);
-    font-size: .95rem; overflow: hidden;
-  }
-  .ticket-head {
-    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-    padding: 1rem 1.25rem; border-bottom: 1px solid var(--rule);
-  }
-  .ticket-id { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-  .status {
-    font-weight: 700; font-size: .85rem; padding: .25rem .7rem; border-radius: 999px;
-    background: #f1e6d0; color: #6f5326; white-space: nowrap;
-  }
-  .status[data-state="resolved"] { background: #e3e7da; color: #3e4f39; }
-  .ticket h2 { font-size: 1.2rem; line-height: 1.3; margin: 0; padding: 1.1rem 1.25rem .9rem; letter-spacing: -.01em; }
-  .ticket dl {
-    display: grid; grid-template-columns: auto 1fr; gap: .35rem 1.25rem;
-    margin: 0; padding: 0 1.25rem 1.1rem;
-  }
-  .ticket dt { color: var(--ink-soft); }
-  .ticket dd { margin: 0; font-weight: 500; }
-  .log { list-style: none; margin: 0; padding: .9rem 1.25rem 1.1rem; border-top: 1px solid var(--rule); background: #f8f4ec; }
-  .log li { display: grid; grid-template-columns: 1.25rem 1fr; gap: .5rem; align-items: start; padding-block: .2rem; color: var(--ink-soft); }
-  .log li::before {
-    content: ""; width: .7rem; height: .7rem; margin-top: .45rem; border-radius: 50%;
-    border: 2px solid var(--rule); background: var(--sheet);
-  }
-  .log li.done { color: var(--ink); }
-  .log li.done::before { border-color: var(--resolved); background: var(--resolved); }
-  .log li.current::before { border-color: var(--pending); }
+  /* ---------- Sections sombres ---------- */
+  .sombre { background: var(--nuit); color: var(--blanc); }
+  .sombre a:not(.btn) { color: var(--lavande); }
 
-  /* Sections */
-  section { padding-block: clamp(3rem, 7vw, 5rem); border-top: 1px solid var(--rule); }
-  section > .wrap > h2 {
-    font-size: clamp(1.7rem, 3.2vw, 2.4rem); line-height: 1.15; letter-spacing: -.02em;
-    margin: 0 0 1rem; font-weight: 800;
-  }
-  .intro { color: var(--ink-soft); max-width: var(--measure); margin: 0 0 2.5rem; }
+  /* ---------- En-tête ---------- */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.25rem; }
+  .brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--blanc); text-decoration: none; font-family: var(--titre); font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; }
+  .sombre a.brand { color: var(--blanc); }
+  .brand svg { width: 2rem; height: 2rem; flex: none; }
+  .top nav { display: flex; align-items: center; gap: 1.6rem; font-size: .97rem; }
+  .sombre .top nav a { color: var(--texte-nuit); text-decoration: none; }
+  .sombre .top nav a:hover { color: var(--blanc); }
+  .top .btn { padding: .6rem 1.1rem; font-size: .95rem; }
+  .sombre .top .btn { color: var(--blanc); }
 
-  /* Offres : une liste de prix, pas des cartes */
-  .offers { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
-  .offer {
-    display: grid; grid-template-columns: 15rem 1fr 11rem; gap: .5rem 2rem;
-    padding-block: 1.5rem; border-bottom: 1px solid var(--rule); align-items: baseline;
+  /* ---------- Hero ---------- */
+  .hero-zone { position: relative; overflow: hidden; }
+  .hero-zone::before {
+    content: ""; position: absolute; inset: auto -10% -40% 35%; height: 90%;
+    background: radial-gradient(closest-side, rgba(106, 76, 245, .45), rgba(106, 76, 245, 0) 70%);
+    pointer-events: none;
   }
-  .offer h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.01em; }
-  .offer .dur { display: block; color: var(--ink-soft); font-size: .95rem; font-weight: 400; margin-top: .2rem; }
-  .offer p { margin: 0; max-width: 52ch; }
-  .price { font-weight: 800; font-size: 1.3rem; white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
-  .price small { display: block; font-weight: 400; font-size: .85rem; color: var(--ink-soft); }
-  .note { margin: 1.25rem 0 0; color: var(--ink-soft); font-size: .95rem; max-width: var(--measure); }
+  .hero { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3rem, 7vw, 5rem); }
+  .hero h1 { font-size: clamp(2.4rem, 4.9vw, 3.9rem); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 1.5rem; max-width: 15ch; text-wrap: balance; }
+  .hero .lead { font-size: 1.2rem; color: var(--texte-nuit); max-width: 44ch; margin: 0 0 2.25rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .85rem; }
 
-  /* Déroulé : une vraie séquence, donc numérotée */
-  .steps { counter-reset: step; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
-  .steps li { counter-increment: step; border-top: 2px solid var(--ink); padding-top: .9rem; }
-  .steps li::before { content: counter(step); display: block; font-weight: 800; font-size: 1.6rem; line-height: 1; margin-bottom: .6rem; color: var(--resolved); }
-  .steps h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
-  .steps p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+  .preuves { position: relative; display: flex; flex-wrap: wrap; gap: .75rem 2.25rem; margin: 0; padding: 1.5rem 0 2.75rem; list-style: none; border-top: 1px solid var(--trait-nuit); color: var(--texte-nuit); font-size: .97rem; }
+  .preuves li { display: inline-flex; align-items: center; gap: .55rem; }
+  .preuves svg { width: 1.1rem; height: 1.1rem; flex: none; fill: none; stroke: var(--menthe); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .preuves strong { color: var(--blanc); font-weight: 600; }
+
+  /* ---------- Workflow : l'élément signature ---------- */
+  .flow {
+    margin: 0; background: var(--nuit-2); border: 1px solid var(--trait-nuit); border-radius: 22px;
+    padding: 1.4rem 1.4rem 1.5rem; box-shadow: 0 30px 60px -30px rgba(5, 8, 30, .8);
+  }
+  .flow-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .flow-head p { margin: 0; font-weight: 600; font-size: .98rem; }
+  .flow-head small { display: block; color: var(--texte-nuit); font-weight: 400; font-size: .85rem; }
+  .pill { font-size: .8rem; font-weight: 600; padding: .3rem .75rem; border-radius: 999px; background: rgba(79, 209, 197, .14); color: var(--menthe); white-space: nowrap; }
+  .pill::before { content: ""; display: inline-block; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; margin-right: .45rem; vertical-align: .08em; }
+
+  .steps-flow { list-style: none; margin: 0; padding: 0; position: relative; }
+  .steps-flow::before { content: ""; position: absolute; left: 1.05rem; top: 1rem; bottom: 1rem; width: 2px; background: var(--trait-nuit); }
+  .node { position: relative; display: grid; grid-template-columns: 2.1rem 1fr; gap: .9rem; align-items: start; padding-block: .45rem; }
+  .node-ico { position: relative; z-index: 1; width: 2.1rem; height: 2.1rem; border-radius: 10px; display: grid; place-items: center; background: var(--violet); color: var(--blanc); }
+  .node-ico svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .node-body { background: var(--nuit); border: 1px solid var(--trait-nuit); border-radius: 12px; padding: .65rem .9rem; }
+  .node-type { display: block; font-size: .8rem; color: var(--lavande); }
+  .node-label { display: block; font-weight: 600; font-size: .97rem; line-height: 1.35; }
+  .node-actions { margin: .5rem 0 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
+  .node-actions li { display: flex; align-items: center; gap: .5rem; font-size: .92rem; color: var(--texte-nuit); }
+  .node-actions li::before { content: ""; width: .5rem; height: .5rem; border-radius: 2px; background: var(--lavande); flex: none; }
+  .node-end .node-ico { background: var(--menthe); color: var(--nuit); }
+  .node-end .node-body { border-color: rgba(79, 209, 197, .45); }
+
+  /* Animation unique : le workflow s'exécute une fois au chargement */
+  .flow.armed .node { opacity: .38; transition: opacity .35s ease; }
+  .flow.armed .node .node-ico { background: var(--trait-nuit); transition: background-color .35s ease; }
+  .flow.armed .node.on { opacity: 1; }
+  .flow.armed .node.on .node-ico { background: var(--violet); }
+  .flow.armed .node-end.on .node-ico { background: var(--menthe); }
+  .flow.armed .pill { opacity: 0; transition: opacity .35s ease; }
+  .flow.armed.done .pill { opacity: 1; }
+
+  /* ---------- Sections claires ---------- */
+  .bloc { padding-block: clamp(3.5rem, 8vw, 6rem); }
+  .bloc + .bloc { padding-top: 0; }
+  .titre-bloc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 4rem; align-items: end; margin-bottom: 2.75rem; }
+  .titre-bloc h2, .bloc-seul h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0; }
+  .titre-bloc p { margin: 0; color: var(--encre-douce); max-width: 52ch; }
+
+  /* Offres */
+  .offres { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+  .offre { display: flex; flex-direction: column; background: var(--blanc); border: 1px solid var(--filet); border-radius: 22px; padding: 1.75rem; }
+  .offre h3 { font-size: 1.45rem; line-height: 1.15; margin: 0 0 .35rem; }
+  .offre .pour { margin: 0 0 1.1rem; color: var(--violet); font-weight: 600; font-size: .95rem; }
+  .offre .desc { margin: 0 0 1.75rem; color: var(--encre-douce); }
+  .prix { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--filet); }
+  .prix strong { display: block; font-family: var(--titre); font-weight: 800; font-size: 1.9rem; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .prix span { color: var(--encre-douce); font-size: .92rem; }
+  .offre-phare { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); }
+  .offre-phare .pour { color: var(--lavande); }
+  .offre-phare .desc, .offre-phare .prix span { color: var(--texte-nuit); }
+  .offre-phare .prix { border-top-color: var(--trait-nuit); }
+
+  .conditions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.25rem 0 0; padding: 1.4rem 1.75rem; list-style: none; border-radius: 22px; background: #e9e6fa; }
+  .conditions li { font-size: .95rem; color: var(--encre-douce); }
+  .conditions strong { display: block; color: var(--encre); font-weight: 600; }
+
+  /* Déroulé */
+  .deroule { padding-block: clamp(3.5rem, 8vw, 6rem); }
+  .deroule .titre-bloc p { color: var(--texte-nuit); }
+  .etapes { counter-reset: etape; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; position: relative; }
+  .etapes::before { content: ""; position: absolute; top: 1.4rem; left: 1.4rem; right: 1.4rem; height: 2px; background: var(--trait-nuit); }
+  .etapes li { counter-increment: etape; position: relative; }
+  .etapes li::before {
+    content: counter(etape); display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%;
+    background: var(--nuit); box-shadow: inset 0 0 0 2px var(--violet); color: var(--blanc);
+    font-family: var(--titre); font-weight: 800; font-size: 1.15rem; margin-bottom: 1.1rem; position: relative;
+  }
+  .etapes li:last-child::before { background: var(--violet); }
+  .etapes h3 { font-size: 1.2rem; margin: 0 0 .4rem; }
+  .etapes p { margin: 0; color: var(--texte-nuit); font-size: .97rem; }
 
   /* Missions */
-  .missions { margin: 0; display: grid; grid-template-columns: 14rem 1fr; border-top: 2px solid var(--ink); }
-  .missions dt, .missions dd { padding-block: 1rem; border-bottom: 1px solid var(--rule); margin: 0; }
-  .missions dt { font-weight: 700; padding-right: 1.5rem; }
-  .missions dd { color: var(--ink-soft); }
+  .missions { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .mission { background: var(--blanc); border: 1px solid var(--filet); border-radius: 18px; padding: 1.5rem 1.6rem; }
+  .mission h3 { font-size: 1.2rem; margin: 0 0 .45rem; }
+  .mission p { margin: 0 0 1rem; color: var(--encre-douce); }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+  .tags li { font-size: .82rem; font-weight: 600; padding: .2rem .55rem; border-radius: 6px; background: #ece9fd; color: var(--violet-fonce); }
+  .mission-large { grid-column: 1 / -1; }
+
+  /* Ressources */
+  .guides { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .guides a { display: flex; flex-direction: column; height: 100%; padding: 1.6rem; border-radius: 18px; background: var(--blanc); border: 1px solid var(--filet); color: var(--encre); text-decoration: none; }
+  .guides a:hover { border-color: var(--violet); }
+  .guides strong { font-family: var(--titre); font-size: 1.25rem; line-height: 1.2; letter-spacing: -.015em; margin-bottom: .6rem; }
+  .guides span { color: var(--encre-douce); font-size: .97rem; margin-bottom: 1.25rem; }
+  .guides em { margin-top: auto; font-style: normal; font-weight: 600; color: var(--violet); }
+  .guides a:hover em { text-decoration: underline; text-underline-offset: .2em; }
 
   /* À propos */
-  .about { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
-  .about p { max-width: var(--measure); margin: 0 0 1rem; }
-  .portrait {
-    display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
-    border-radius: 10px; border: 1px solid var(--rule); 
-  }
-  .badges { list-style: none; margin: 1.75rem 0 1rem; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; max-width: 40rem; }
-  .badge {
-    display: flex; gap: .75rem; align-items: center; padding: .8rem 1rem;
-    background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px;
-  }
-  .badge strong { display: block; font-size: .98rem; line-height: 1.3; }
-  .badge small { display: block; color: var(--ink-soft); font-size: .85rem; }
-  .seal { flex: none; width: 2rem; height: 2rem; }
-  .seal circle { fill: var(--ink); }
-  .seal path { fill: none; stroke: var(--paper); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-  .badge-main { grid-column: 1 / -1; border-color: var(--resolved); }
-  .badge-main .seal circle { fill: var(--resolved); }
-  .diploma { color: var(--ink-soft); font-size: .95rem; }
-  .certs { list-style: none; margin: 0; padding: 0; }
-  .certs li { padding: .55rem 0; border-bottom: 1px solid var(--rule); }
-  .certs li:first-child { font-weight: 700; }
+  .apropos { display: grid; grid-template-columns: minmax(240px, 380px) 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+  .portrait-cadre { position: relative; }
+  .portrait-cadre::before { content: ""; position: absolute; inset: 1.1rem -1.1rem -1.1rem 1.1rem; border-radius: 22px; background: var(--violet); }
+  .portrait { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
+  .apropos h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 1.25rem; }
+  .apropos p { max-width: var(--mesure); margin: 0 0 1rem; }
+  .certifs { list-style: none; margin: 2rem 0 1.25rem; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+  .certifs li { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .95rem; border-radius: 999px; background: var(--blanc); border: 1px solid var(--filet); font-weight: 600; font-size: .95rem; }
+  .certifs svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: var(--violet); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .certifs .phare { background: var(--nuit); border-color: var(--nuit); color: var(--blanc); }
+  .certifs .phare svg { stroke: var(--menthe); }
+  .diplome { color: var(--encre-douce); font-size: .97rem; }
 
   /* Contact */
-  .contact { background: var(--ink); color: var(--paper); border-top: 0; }
-  .contact h2 { color: var(--paper); }
-  .contact p { max-width: var(--measure); color: #d6d1c6; }
-  .mail {
-    display: inline-block; font-size: clamp(1.6rem, 4.5vw, 2.8rem); font-weight: 800;
-    letter-spacing: -.02em; color: var(--paper); margin: .5rem 0 1.5rem; word-break: break-word;
+  .contact { position: relative; overflow: hidden; padding-block: clamp(4rem, 9vw, 7rem); }
+  .contact::before {
+    content: ""; position: absolute; width: 60rem; height: 60rem; left: 50%; top: 10%; transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(106, 76, 245, .38), rgba(106, 76, 245, 0) 70%); pointer-events: none;
   }
-  .mail:hover { color: #cdd8c3; }
-  .contact a:not(.mail) { color: #cdd8c3; }
-  .btn-light { background: var(--paper); color: var(--ink); margin: .5rem 0 0; }
-  .contact a.btn-light { color: var(--ink); }
-  .contact a.btn-light:hover { background: #cdd8c3; color: var(--ink); }
-  .contact .or { margin: 2rem 0 0; color: #d6d1c6; }
-  .contact .mail { margin-top: .25rem; }
+  .contact .wrap { position: relative; text-align: center; }
+  .contact h2 { font-size: clamp(2.3rem, 5vw, 3.8rem); line-height: 1.02; letter-spacing: -.03em; margin: 0 auto 1.25rem; max-width: 16ch; }
+  .contact p { color: var(--texte-nuit); max-width: 54ch; margin: 0 auto 2.25rem; }
+  .contact .actions { justify-content: center; }
+  .contact .mail { display: inline-block; margin-top: 2.25rem; font-family: var(--titre); font-weight: 800; font-size: clamp(1.4rem, 3.4vw, 2.1rem); letter-spacing: -.02em; color: var(--blanc); text-decoration: none; }
+  .sombre .contact .mail, .contact a.mail { color: var(--blanc); }
+  .contact .mail:hover { text-decoration: underline; text-decoration-color: var(--lavande); }
 
-  /* Pied de page et mentions */
-  footer { padding-block: 2rem 3rem; font-size: .9rem; color: var(--ink-soft); }
-  footer details { max-width: var(--measure); }
-  footer summary { cursor: pointer; color: var(--ink); font-weight: 500; }
-  footer h3 { font-size: .95rem; margin: 1.25rem 0 .25rem; color: var(--ink); }
+  /* Pied de page */
+  footer { background: var(--nuit); color: var(--texte-nuit); font-size: .92rem; border-top: 1px solid var(--trait-nuit); }
+  footer .wrap { padding-block: 2rem 2.75rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; align-items: start; }
   footer p { margin: 0 0 .5rem; }
-  .todo { background: #f1e6d0; color: #6f5326; padding: 0 .3rem; border-radius: 3px; }
+  footer a { color: var(--lavande); }
+  footer details { grid-column: 1 / -1; max-width: var(--mesure); }
+  footer summary { cursor: pointer; color: var(--blanc); font-weight: 600; }
+  footer h3 { font-family: var(--texte); font-size: .95rem; letter-spacing: 0; margin: 1.25rem 0 .25rem; color: var(--blanc); }
+  .liens-pied { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 
-  /* Mobile */
-  @media (max-width: 900px) {
-    .hero, .about { grid-template-columns: 1fr; }
-    .portrait { max-width: 280px; }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .offer { grid-template-columns: 1fr auto; }
-    .offer p { grid-column: 1 / -1; grid-row: 2; }
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero, .apropos { grid-template-columns: 1fr; }
+    .hero h1 { max-width: 16ch; }
+    .offres { grid-template-columns: 1fr; }
+    .conditions { grid-template-columns: 1fr; }
+    .etapes { grid-template-columns: 1fr; gap: 1.25rem; }
+    .etapes::before { top: 1.4rem; bottom: 1.4rem; left: 1.35rem; right: auto; width: 2px; height: auto; }
+    .etapes li { display: grid; grid-template-columns: 2.8rem 1fr; column-gap: 1.1rem; }
+    .etapes li::before { grid-row: 1 / 3; margin: 0; }
+    .guides { grid-template-columns: 1fr; }
+    .titre-bloc { grid-template-columns: 1fr; }
+    .portrait-cadre { max-width: 320px; }
   }
-  @media (max-width: 600px) {
-    .badges { grid-template-columns: 1fr; }
-    .top { flex-direction: column; gap: .5rem; }
-    .steps { grid-template-columns: 1fr; }
+  @media (max-width: 760px) {
+    .top { flex-wrap: wrap; }
+    .top nav { order: 3; width: 100%; gap: 1.1rem; overflow-x: auto; padding-bottom: .25rem; font-size: .93rem; }
+    .top nav a { white-space: nowrap; }
     .missions { grid-template-columns: 1fr; }
-    .missions dt { border-bottom: 0; padding-bottom: 0; }
-    .missions dd { padding-top: .25rem; }
-    .offer { grid-template-columns: 1fr; }
-    .price { text-align: left; }
-    .offer p { grid-row: auto; }
+    footer .wrap { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .top .btn { display: none; }
+    .flow { padding: 1.1rem; }
+    .actions .btn { width: 100%; justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<header class="wrap top">
-  <a class="brand" href="#" id="top">David Wallemme</a>
-  <nav aria-label="Sections">
-    <a href="#offres">Offres et tarifs</a>
-    <a href="#missions">Missions</a>
-    <a href="#ressources">Ressources</a>
-    <a href="#a-propos">À propos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<div class="sombre hero-zone">
+  <header class="wrap top">
+    <a class="brand" href="#" id="top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#6a4cf5"/><path d="M18 33.5l9 9L46.5 23" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      David Wallemme
+    </a>
+    <nav aria-label="Sections">
+      <a href="#offres">Offres et tarifs</a>
+      <a href="#missions">Missions</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener">Réserver un appel</a>
+  </header>
 
-<main>
+  <main>
   <div class="wrap hero">
     <div>
-      <h1>Votre service desk sur Freshservice, mis en place par un expert certifié.</h1>
-      <p class="lead">Consultant indépendant certifié Freshservice Expert, j'accompagne les entreprises en France et en Suisse, du cadrage des besoins à la formation de vos équipes.</p>
+      <h1>Votre service desk Freshservice, du cadrage à l'adoption.</h1>
+      <p class="lead">Consultant indépendant certifié Freshservice Expert, j'accompagne les entreprises en France et en Suisse : mise en place, audit et évolutions de leur outil ITSM.</p>
       <div class="actions">
-        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener">Réserver un appel de 30 min</a>
-        <a class="link-quiet" href="#offres">Voir les tarifs</a>
+        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel de 30 min</a>
+        <a class="btn btn-ghost" href="#offres">Voir les offres et tarifs</a>
       </div>
     </div>
 
-    <aside class="ticket" aria-label="Exemple : votre projet suivi comme un ticket">
-      <div class="ticket-head">
-        <span class="ticket-id">Demande n° 2026-0147</span>
-        <span class="status" id="status" data-state="open" aria-live="polite">En cours</span>
+    <figure class="flow" id="flow" aria-label="Exemple de workflow Freshservice : l'arrivée d'un collaborateur">
+      <div class="flow-head">
+        <p>Arrivée d'un collaborateur<small>Workflow automatisé dans Freshservice</small></p>
+        <span class="pill">Terminé</span>
       </div>
-      <h2>Mettre en place Freshservice dans notre entreprise</h2>
-      <dl>
-        <dt>Demandeur</dt><dd>Votre entreprise</dd>
-        <dt>Assigné à</dt><dd>David Wallemme</dd>
-        <dt>Catégorie</dt><dd>Projet ITSM</dd>
-        <dt>Délai cible</dt><dd>Défini au cadrage</dd>
-      </dl>
-      <ol class="log" id="log">
-        <li class="done">Atelier de cadrage avec vos équipes</li>
-        <li class="done">Paramétrage incidents, demandes et portail</li>
-        <li class="current">Recette et formation des administrateurs</li>
-        <li>Mise en service</li>
+      <ol class="steps-flow">
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L4 14h7l-1 7 9-11h-7z"/></svg></span>
+          <span class="node-body"><span class="node-type">Déclencheur</span><span class="node-label">Demande d'arrivée validée par le manager</span></span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a6 6 0 006 6h6M15 12l3 3-3 3M6 21v-4"/></svg></span>
+          <span class="node-body"><span class="node-type">Condition</span><span class="node-label">Poste avec ordinateur portable&nbsp;: oui</span></span>
+        </li>
+        <li class="node">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+          <span class="node-body"><span class="node-type">Actions</span><span class="node-label">Tâches créées et affectées</span>
+            <ul class="node-actions">
+              <li>Compte créé dans Entra ID</li>
+              <li>PC portable préparé par le support</li>
+              <li>Accès aux applications métier demandés</li>
+            </ul>
+          </span>
+        </li>
+        <li class="node node-end">
+          <span class="node-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <span class="node-body"><span class="node-type">Résultat</span><span class="node-label">Le collaborateur a tout ce qu'il faut à son arrivée</span></span>
+        </li>
       </ol>
-    </aside>
+    </figure>
   </div>
 
-  <section id="offres">
-    <div class="wrap">
+  <div class="wrap">
+    <ul class="preuves" aria-label="En bref">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Certifié Freshservice Expert</strong></span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>4 ans</strong> d'intégration Freshservice</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>ITIL 4</strong> Foundation</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>France et Suisse, <strong>à distance ou sur site</strong></span></li>
+    </ul>
+  </div>
+  </main>
+</div>
+
+<section id="offres" class="bloc">
+  <div class="wrap">
+    <div class="titre-bloc">
       <h2>Offres et tarifs</h2>
-      <p class="intro">Chaque projet est différent : après un premier échange, je vous envoie un devis forfaitaire adapté à votre périmètre. Le conseil sur le choix des licences Freshservice est inclus.</p>
-      <ul class="offers">
-        <li class="offer">
-          <h3>Mise en place de Freshservice<span class="dur">Vous n'avez pas encore l'outil</span></h3>
-          <p>Cadrage de vos besoins, gestion des incidents et des demandes, portail utilisateurs, SLA, premières automatisations et formation de vos administrateurs. Vous repartez avec un service desk opérationnel.</p>
-          <div class="price">dès 3 600 € HT<small>forfait sur devis</small></div>
-        </li>
-        <li class="offer">
-          <h3>Audit et plan d'action<span class="dur">Votre instance existe déjà</span></h3>
-          <p>Analyse de votre configuration actuelle, points de blocage, fonctionnalités inexploitées, et un plan d'action priorisé pour en tirer le meilleur.</p>
-          <div class="price">dès 1 500 € HT<small>forfait sur devis</small></div>
-        </li>
-        <li class="offer">
-          <h3>Carnet de jours<span class="dur">10 jours valables 12 mois</span></h3>
-          <p>Des jours à utiliser quand vous en avez besoin : évolutions, nouveaux workflows d'arrivée et de départ, intégrations, reprise de données, formation de nouveaux agents.</p>
-          <div class="price">6 800 € HT<small>soit 680 € / jour</small></div>
-        </li>
-      </ul>
-      <p class="note">Besoin ponctuel hors forfait : 800 € HT la journée, facturable à la demi-journée. Projet plus large, comme une migration depuis un autre outil : sur devis. Missions à distance ou sur site (région lyonnaise et Paris) ; pour la Suisse, à distance avec des déplacements ponctuels.</p>
+      <p>Chaque projet est différent : après un premier échange, je vous envoie un devis forfaitaire adapté à votre périmètre. Le conseil sur le choix des licences Freshservice est inclus.</p>
     </div>
-  </section>
+    <ul class="offres">
+      <li class="offre offre-phare">
+        <h3>Mise en place de Freshservice</h3>
+        <p class="pour">Vous n'avez pas encore l'outil</p>
+        <p class="desc">Cadrage de vos besoins, gestion des incidents et des demandes, portail utilisateurs, SLA, premières automatisations et formation de vos administrateurs. Vous repartez avec un service desk opérationnel.</p>
+        <div class="prix"><strong>dès 3 600 € HT</strong><span>forfait sur devis</span></div>
+      </li>
+      <li class="offre">
+        <h3>Audit et plan d'action</h3>
+        <p class="pour">Votre instance existe déjà</p>
+        <p class="desc">Analyse de votre configuration actuelle, points de blocage, fonctionnalités inexploitées, et un plan d'action priorisé pour en tirer le meilleur.</p>
+        <div class="prix"><strong>dès 1 500 € HT</strong><span>forfait sur devis</span></div>
+      </li>
+      <li class="offre">
+        <h3>Carnet de jours</h3>
+        <p class="pour">10 jours valables 12 mois</p>
+        <p class="desc">Des jours à utiliser quand vous en avez besoin : évolutions, workflows d'arrivée et de départ, intégrations, reprise de données, formation de nouveaux agents.</p>
+        <div class="prix"><strong>6 800 € HT</strong><span>soit 680 € la journée</span></div>
+      </li>
+    </ul>
+    <ul class="conditions">
+      <li><strong>Besoin ponctuel</strong>800 € HT la journée, facturable à la demi-journée.</li>
+      <li><strong>Migration depuis un autre outil</strong>Sur devis, après un inventaire de l'existant.</li>
+      <li><strong>Où j'interviens</strong>À distance ou sur site en région lyonnaise et à Paris ; pour la Suisse, à distance avec des déplacements ponctuels.</li>
+    </ul>
+  </div>
+</section>
 
-  <section id="deroule">
-    <div class="wrap">
+<section id="deroule" class="sombre deroule">
+  <div class="wrap">
+    <div class="titre-bloc">
       <h2>Comment se déroule un projet</h2>
-      <p class="intro">Le même déroulé quelle que soit la taille du projet, adapté à votre rythme.</p>
-      <ol class="steps">
-        <li><h3>Cadrage</h3><p>On définit ensemble vos processus, vos équipes et vos priorités.</p></li>
-        <li><h3>Paramétrage</h3><p>Je configure Freshservice selon ce qui a été décidé, sans sur-mesure inutile.</p></li>
-        <li><h3>Recette</h3><p>Vos équipes testent sur des cas réels avant la mise en service.</p></li>
-        <li><h3>Formation</h3><p>Administrateurs et agents repartent autonomes sur l'outil.</p></li>
-        <li><h3>Mise en service</h3><p>Démarrage accompagné, puis suivi pendant les premières semaines.</p></li>
-      </ol>
+      <p>Le même déroulé quelle que soit la taille du projet, adapté à votre rythme.</p>
     </div>
-  </section>
+    <ol class="etapes">
+      <li><h3>Cadrage</h3><p>On définit ensemble vos processus, vos équipes et vos priorités.</p></li>
+      <li><h3>Paramétrage</h3><p>Je configure Freshservice selon ce qui a été décidé, sans sur-mesure inutile.</p></li>
+      <li><h3>Recette</h3><p>Vos équipes testent sur des cas réels avant la mise en service.</p></li>
+      <li><h3>Formation</h3><p>Administrateurs et agents repartent autonomes sur l'outil.</p></li>
+      <li><h3>Mise en service</h3><p>Démarrage accompagné, puis suivi pendant les premières semaines.</p></li>
+    </ol>
+  </div>
+</section>
 
-  <section id="missions">
-    <div class="wrap">
+<section id="missions" class="bloc">
+  <div class="wrap">
+    <div class="titre-bloc">
       <h2>Missions réalisées</h2>
-      <p class="intro">Quelques projets menés ces dernières années. Les noms des clients restent confidentiels.</p>
-      <dl class="missions">
-        <dt>Laboratoire pharmaceutique</dt>
-        <dd>Déploiement de Freshservice en plusieurs lots : incidents, demandes et catalogue de services.</dd>
-        <dt>Groupe de services aux particuliers</dt>
-        <dd>Interface entre Freshservice et l'ERP Odoo par API REST, automatisation des arrivées et des départs.</dd>
-        <dt>Secteur sport et loisirs</dt>
-        <dd>Maintenance de l'instance et automatisation des parcours d'arrivée et de départ.</dd>
-        <dt>Producteur d'énergies renouvelables</dt>
-        <dd>Mise en place complète de Freshservice, sans outil existant.</dd>
-        <dt>Grande organisation française</dt>
-        <dd>Pilotage côté client d'un programme Freshservice pour l'ensemble de ses services.</dd>
-      </dl>
+      <p>Quelques projets menés ces dernières années. Les noms des clients restent confidentiels.</p>
     </div>
-  </section>
+    <ul class="missions">
+      <li class="mission">
+        <h3>Laboratoire pharmaceutique</h3>
+        <p>Déploiement de Freshservice en plusieurs lots : incidents, demandes et catalogue de services.</p>
+        <ul class="tags"><li>Déploiement</li><li>Catalogue de services</li></ul>
+      </li>
+      <li class="mission">
+        <h3>Groupe de services aux particuliers</h3>
+        <p>Interface entre Freshservice et l'ERP Odoo par API REST.</p>
+        <ul class="tags"><li>Intégration</li><li>API REST</li><li>Odoo</li></ul>
+      </li>
+      <li class="mission">
+        <h3>Secteur sport et loisirs</h3>
+        <p>Maintenance de l'instance et automatisation des parcours d'arrivée et de départ.</p>
+        <ul class="tags"><li>Maintenance</li><li>Workflows</li></ul>
+      </li>
+      <li class="mission">
+        <h3>Producteur d'énergies renouvelables</h3>
+        <p>Mise en place complète de Freshservice, sans outil existant.</p>
+        <ul class="tags"><li>Mise en place</li></ul>
+      </li>
+      <li class="mission mission-large">
+        <h3>Grande organisation française</h3>
+        <p>Pilotage côté client d'un programme Freshservice pour l'ensemble de ses services.</p>
+        <ul class="tags"><li>Pilotage de programme</li></ul>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <section id="ressources">
-    <div class="wrap">
+<section id="ressources" class="bloc">
+  <div class="wrap">
+    <div class="titre-bloc">
       <h2>Ressources</h2>
-      <p class="intro">Des guides pratiques pour préparer votre projet Freshservice.</p>
-      <ul class="res">
-        <li><a href="/freshservice-vs-glpi"><strong>Freshservice ou GLPI : lequel choisir pour votre service desk ?</strong><span>Coût réel, maintenance, fonctionnalités : les critères concrets pour choisir.</span></a></li>
-        <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice ?</strong><span>Licences par agent, coût de l'intégration et budgets types.</span></a></li>
-        <li><a href="/migrer-vers-freshservice"><strong>Migrer vers Freshservice : les étapes et les pièges à éviter</strong><span>Ce qu'il faut reprendre, ce qu'il vaut mieux laisser, et comment réussir la bascule.</span></a></li>
-      </ul>
+      <p>Des guides pratiques pour préparer votre projet Freshservice.</p>
     </div>
-  </section>
+    <ul class="guides">
+      <li><a href="/freshservice-vs-glpi"><strong>Freshservice ou GLPI&nbsp;: lequel choisir pour votre service desk&nbsp;?</strong><span>Coût réel, maintenance, fonctionnalités : les critères concrets pour choisir.</span><em>Lire le comparatif</em></a></li>
+      <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice&nbsp;?</strong><span>Licences par agent, coût de l'intégration et budgets types.</span><em>Lire le guide des prix</em></a></li>
+      <li><a href="/migrer-vers-freshservice"><strong>Migrer vers Freshservice&nbsp;: les étapes et les pièges à éviter</strong><span>Ce qu'il faut reprendre, ce qu'il vaut mieux laisser, et comment réussir la bascule.</span><em>Lire le guide de migration</em></a></li>
+    </ul>
+  </div>
+</section>
 
-  <section id="a-propos">
-    <div class="wrap about">
+<section id="a-propos" class="bloc">
+  <div class="wrap apropos">
+    <div class="portrait-cadre">
       <img class="portrait" src="david-wallemme.jpg" width="720" height="900" alt="Portrait de David Wallemme" loading="lazy">
-      <div>
-        <h2>À propos</h2>
-        <p>Je suis David Wallemme, consultant ITSM indépendant basé à Lyon. Avant de me spécialiser dans les outils de gestion des services, j'ai passé près de dix ans en administration système, réseau et sécurité.</p>
-        <p>Depuis quatre ans, j'intègre Freshservice : recueil du besoin, paramétrage, intégrations, recette et surtout formation, la partie que je préfère. Je travaille directement avec vous, sans intermédiaire, et je m'adapte à la taille de votre équipe.</p>
-        <ul class="badges" aria-label="Certifications">
-          <li class="badge badge-main"><svg class="seal" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span><strong>Freshservice Expert</strong><small>Certification Freshworks</small></span></li>
-          <li class="badge"><svg class="seal" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span><strong>Freshservice Foundation</strong><small>Certification Freshworks</small></span></li>
-          <li class="badge"><svg class="seal" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span><strong>ITIL 4 Foundation</strong><small>Gestion des services IT</small></span></li>
-          <li class="badge"><svg class="seal" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span><strong>EasyVista Service Manager</strong><small>Certification EasyVista</small></span></li>
-          <li class="badge"><svg class="seal" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span><strong>EasyVista Service Apps</strong><small>Certification EasyVista</small></span></li>
-        </ul>
-        <p class="diploma">Master Manager en systèmes d'information, option cybersécurité (CESI)</p>
-        <p class="li-link"><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
-      </div>
     </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <h2>Parlons de votre projet</h2>
-      <p>Réservez un appel en visio pour présenter votre besoin, ou décrivez-moi en quelques lignes votre équipe IT et votre outil actuel : je vous réponds sous 48 heures avec une première estimation.</p>
-      <a class="btn btn-light" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M14 14h2M8 17.5h2"/></svg>Réserver un appel de 30 min</a>
-      <p class="or">Ou écrivez-moi directement :</p>
-      <a class="mail" href="mailto:david@wallemme.com?subject=Projet%20Freshservice">david@wallemme.com</a>
-      <p><a class="li" href="https://www.linkedin.com/in/david-wallemme-28942a11b/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.6c0-1.6 1-2.9 2.5-2.9S17 11.8 17 13.4V17M12 10.5V17"/></svg>Me contacter sur LinkedIn</a></p>
+    <div>
+      <h2>À propos</h2>
+      <p>Je suis David Wallemme, consultant ITSM indépendant basé à Lyon. Avant de me spécialiser dans les outils de gestion des services, j'ai passé près de dix ans en administration système, réseau et sécurité.</p>
+      <p>Depuis quatre ans, j'intègre Freshservice : recueil du besoin, paramétrage, intégrations, recette et surtout formation, la partie que je préfère. Je travaille directement avec vous, sans intermédiaire, et je m'adapte à la taille de votre équipe.</p>
+      <ul class="certifs" aria-label="Certifications">
+        <li class="phare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Freshservice Expert</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Freshservice Foundation</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>ITIL 4 Foundation</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>EasyVista Service Manager</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>EasyVista Service Apps</li>
+      </ul>
+      <p class="diplome">Master Manager en systèmes d'information, option cybersécurité (CESI Lyon)</p>
+      <p><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Mon profil LinkedIn</a></p>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
-<footer class="wrap">
-  <p>© 2026 David Wallemme. Freshservice est une marque de Freshworks Inc.</p>
-  <details id="mentions">
-    <summary>Mentions légales</summary>
-    <h3>Éditeur</h3>
-    <p>David Wallemme, entrepreneur individuel (micro-entreprise)<br>
-    SIRET : 898 374 400 00015<br>
-    Adresse : 22 rue de la Soie, 69100 Villeurbanne, France<br>
-    Téléphone : +33 6 18 30 04 24<br>
-    E-mail : <a href="mailto:david@wallemme.com">david@wallemme.com</a><br>
-    Directeur de la publication : David Wallemme</p>
-    <h3>Hébergement</h3>
-    <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
-    <h3>Données personnelles</h3>
-    <p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les messages que vous m'envoyez par e-mail servent uniquement à répondre à votre demande. Vous pouvez demander leur suppression à tout moment à david@wallemme.com.</p>
-  </details>
+<section id="contact" class="sombre contact">
+  <div class="wrap">
+    <h2>Parlons de votre projet Freshservice</h2>
+    <p>Réservez un appel en visio pour présenter votre besoin, ou décrivez-moi en quelques lignes votre équipe IT et votre outil actuel : je vous réponds sous 48 heures avec une première estimation.</p>
+    <div class="actions">
+      <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel de 30 min</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/david-wallemme-28942a11b/">Me contacter sur LinkedIn</a>
+    </div>
+    <a class="mail" href="mailto:david@wallemme.com?subject=Projet%20Freshservice">david@wallemme.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 David Wallemme. Freshservice est une marque de Freshworks Inc.</p>
+    <p class="liens-pied"><a href="https://www.malt.fr/profile/davidw">Malt</a><a href="https://www.linkedin.com/in/david-wallemme-28942a11b/">LinkedIn</a></p>
+    <details id="mentions">
+      <summary>Mentions légales</summary>
+      <h3>Éditeur</h3>
+      <p>David Wallemme, entrepreneur individuel (micro-entreprise)<br>
+      SIRET : 898 374 400 00015<br>
+      Adresse : 22 rue de la Soie, 69100 Villeurbanne, France<br>
+      Téléphone : +33 6 18 30 04 24<br>
+      E-mail : <a href="mailto:david@wallemme.com">david@wallemme.com</a><br>
+      Directeur de la publication : David Wallemme</p>
+      <h3>Hébergement</h3>
+      <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+      <h3>Données personnelles</h3>
+      <p>Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les messages que vous m'envoyez par e-mail servent uniquement à répondre à votre demande. Vous pouvez demander leur suppression à tout moment à david@wallemme.com.</p>
+    </details>
+  </div>
 </footer>
 
 <script>
-  // Un seul moment animé : le ticket passe de "En cours" à "Résolu" au chargement.
+  // Un seul moment animé : le workflow s'exécute une fois au chargement.
   (function () {
-    var status = document.getElementById('status');
-    var items = document.querySelectorAll('#log li');
-    function resolve() {
-      items.forEach(function (li) { li.classList.remove('current'); li.classList.add('done'); });
-      status.textContent = 'Résolu';
-      status.setAttribute('data-state', 'resolved');
-    }
+    var flow = document.getElementById('flow');
+    if (!flow) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) { resolve(); return; }
-    setTimeout(function () {
-      items[2].classList.remove('current'); items[2].classList.add('done');
-      items[3].classList.add('current');
-    }, 1400);
-    setTimeout(resolve, 2600);
+    if (reduce) return;
+    var nodes = flow.querySelectorAll('.node');
+    flow.classList.add('armed');
+    nodes.forEach(function (n, i) {
+      setTimeout(function () {
+        n.classList.add('on');
+        if (i === nodes.length - 1) flow.classList.add('done');
+      }, 500 + i * 650);
+    });
   })();
 </script>
 </body>
