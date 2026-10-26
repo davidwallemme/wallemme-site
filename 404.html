@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page introuvable | David Wallemme</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f1433">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=bricolage-grotesque:600,800|instrument-sans:400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nuit: #0f1433; --nuit-2: #181f4a; --trait-nuit: #2b3369; --texte-nuit: #c7cae6;
+    --violet: #6a4cf5; --violet-fonce: #5536e0; --lavande: #b6a6ff; --menthe: #4fd1c5; --blanc: #fff;
+    --titre: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+    --texte: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body { margin: 0; background: var(--nuit); color: var(--blanc); font-family: var(--texte); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; position: relative; overflow-x: hidden; }
+  body::before { content: ""; position: absolute; inset: auto 0 0 30%; height: 80%; background: radial-gradient(closest-side, rgba(106, 76, 245, .4), rgba(106, 76, 245, 0) 70%); pointer-events: none; }
+  a { color: var(--lavande); text-underline-offset: .2em; }
+  :focus-visible { outline: 3px solid var(--lavande); outline-offset: 3px; border-radius: 4px; }
+  .wrap { position: relative; width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.25rem; }
+  .brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--blanc); text-decoration: none; font-family: var(--titre); font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; }
+  .brand svg { width: 2rem; height: 2rem; flex: none; }
+  main { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; padding-block: clamp(2.5rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem); }
+  h1 { font-family: var(--titre); font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 1.25rem; text-wrap: balance; }
+  .lead { color: var(--texte-nuit); font-size: 1.15rem; max-width: 44ch; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-bottom: 2.5rem; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .9rem 1.5rem; border-radius: 999px; background: var(--violet); color: var(--blanc); font-weight: 600; text-decoration: none; line-height: 1.2; }
+  .btn:hover { background: var(--violet-fonce); }
+  .btn-ghost { background: transparent; box-shadow: inset 0 0 0 1.5px var(--trait-nuit); }
+  .btn-ghost:hover { background: var(--nuit-2); }
+  .btn svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .guides p { margin: 0 0 .6rem; font-weight: 600; }
+  .guides ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .4rem; color: var(--texte-nuit); }
+
+  .ticket { background: var(--nuit-2); border: 1px solid var(--trait-nuit); border-radius: 22px; padding: 1.5rem; box-shadow: 0 30px 60px -30px rgba(5, 8, 30, .8); }
+  .ticket-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .ticket-head p { margin: 0; font-weight: 600; }
+  .ticket-head small { display: block; color: var(--texte-nuit); font-weight: 400; font-size: .85rem; }
+  .pill { font-size: .8rem; font-weight: 600; padding: .3rem .75rem; border-radius: 999px; background: rgba(79, 209, 197, .14); color: var(--menthe); white-space: nowrap; }
+  .pill::before { content: ""; display: inline-block; width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; margin-right: .45rem; vertical-align: .08em; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .7rem 1.25rem; font-size: .95rem; }
+  dt { color: var(--texte-nuit); }
+  dd { margin: 0; font-weight: 600; }
+  .num { font-family: var(--titre); font-weight: 800; font-size: 2.6rem; line-height: 1; letter-spacing: -.03em; color: var(--lavande); }
+  footer { position: relative; color: var(--texte-nuit); font-size: .9rem; border-top: 1px solid var(--trait-nuit); }
+  footer .wrap { padding-block: 1.75rem 2.25rem; }
+  footer p { margin: 0; }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } .ticket { max-width: 440px; } }
+  @media (max-width: 480px) { .actions .btn { width: 100%; justify-content: center; } }
+</style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#6a4cf5"/><path d="M18 33.5l9 9L46.5 23" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      David Wallemme
+    </a>
+  </header>
+
+  <main class="wrap">
+    <div>
+      <h1>Cette page est introuvable</h1>
+      <p class="lead">Le lien est peut-être ancien ou mal recopié. Pas de panique, la suite est à un clic.</p>
+      <div class="actions">
+        <a class="btn" href="/">Retour à l'accueil</a>
+        <a class="btn btn-ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel</a>
+      </div>
+      <div class="guides">
+        <p>Vous cherchiez peut-être :</p>
+        <ul>
+          <li><a href="/#offres">Les offres et tarifs</a></li>
+          <li><a href="/freshservice-vs-glpi">Freshservice ou GLPI : lequel choisir ?</a></li>
+          <li><a href="/prix-mise-en-place-freshservice">Combien coûte une mise en place Freshservice ?</a></li>
+          <li><a href="/migrer-vers-freshservice">Migrer vers Freshservice</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="ticket" aria-label="Ticket d'incident">
+      <div class="ticket-head">
+        <p>Incident<small>Créé automatiquement</small></p>
+        <span class="pill">Résolu</span>
+      </div>
+      <dl>
+        <dt>Numéro</dt><dd class="num">#404</dd>
+        <dt>Objet</dt><dd>Page introuvable</dd>
+        <dt>Priorité</dt><dd>Basse</dd>
+        <dt>Catégorie</dt><dd>Navigation</dd>
+        <dt>Résolution</dt><dd>Retour à l'accueil</dd>
+      </dl>
+    </aside>
+  </main>
+
+  <footer><div class="wrap"><p>© 2026 David Wallemme · <a href="/#mentions">Mentions légales</a></p></div></footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f15b85454eae41959976dcf3fc8c119f"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
