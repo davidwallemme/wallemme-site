@@ -33,7 +33,6 @@
    "email": "david@wallemme.com",
    "image": "https://wallemme.com/partage.png",
    "logo": "https://wallemme.com/apple-touch-icon.png",
-   "priceRange": "€€",
    "address": {"@type": "PostalAddress", "addressLocality": "Villeurbanne", "postalCode": "69100", "addressRegion": "Auvergne-Rhône-Alpes", "addressCountry": "FR"},
    "areaServed": [{"@type": "Country", "name": "France"}, {"@type": "Country", "name": "Suisse"}],
    "description": "Mise en place, audit et accompagnement de Freshservice (ITSM) par un consultant certifié Freshservice Expert.",
@@ -43,8 +42,8 @@
     "@type": "OfferCatalog",
     "name": "Offres Freshservice",
     "itemListElement": [
-     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en place de Freshservice"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 3600, "priceCurrency": "EUR"}},
-     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Audit et plan d'action Freshservice"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "EUR"}},
+     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mise en place de Freshservice"}},
+     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Audit et plan d'action Freshservice"}},
      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Carnet de 10 jours d'accompagnement"}}
     ]
    }
@@ -109,7 +108,7 @@
    "name": "Pouvez-vous migrer nos données depuis un autre outil ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais un devis. Plus de détails dans le guide de migration."
+    "text": "Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais une proposition. Plus de détails dans le guide de migration."
    }
   },
   {
@@ -304,13 +303,17 @@
   .offre h3 { font-size: 1.45rem; line-height: 1.15; margin: 0 0 .35rem; }
   .offre .pour { margin: 0 0 1.1rem; color: var(--violet); font-weight: 600; font-size: .95rem; }
   .offre .desc { margin: 0 0 1.75rem; color: var(--encre-douce); }
-  .prix { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--filet); }
-  .prix strong { display: block; font-family: var(--titre); font-weight: 800; font-size: 1.9rem; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
-  .prix span { color: var(--encre-douce); font-size: .92rem; }
+  .offre-pied { margin: auto 0 0; padding-top: 1.25rem; border-top: 1px solid var(--filet); }
+  .offre-pied a { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; text-decoration: none; }
+  .offre-pied a::after { content: "→"; transition: transform .15s ease; }
+  .offre-pied a:hover::after { transform: translateX(3px); }
+  @media (prefers-reduced-motion: reduce) { .offre-pied a::after { transition: none; } }
   .offre-phare { background: var(--nuit); color: var(--blanc); border-color: var(--nuit); }
   .offre-phare .pour { color: var(--lavande); }
-  .offre-phare .desc, .offre-phare .prix span { color: var(--texte-nuit); }
-  .offre-phare .prix { border-top-color: var(--trait-nuit); }
+  .offre-phare .desc { color: var(--texte-nuit); }
+  .offre-phare .offre-pied { border-top-color: var(--trait-nuit); }
+  .offre-phare .offre-pied a { color: var(--lavande); }
+  .offre-phare .offre-pied a:hover { color: var(--blanc); }
 
   .conditions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.25rem 0 0; padding: 1.4rem 1.75rem; list-style: none; border-radius: 22px; background: #e9e6fa; }
   .conditions li { font-size: .95rem; color: var(--encre-douce); }
@@ -477,7 +480,7 @@
       David Wallemme
     </a>
     <nav aria-label="Sections">
-      <a href="#offres">Offres et tarifs</a>
+      <a href="#offres">Offres</a>
       <a href="#references">Références</a>
       <a href="#ressources">Ressources</a>
       <a href="#a-propos">À propos</a>
@@ -496,7 +499,7 @@
       <p class="lead">Consultant indépendant certifié Freshservice Expert, j'accompagne les entreprises en France et en Suisse : mise en place, audit et évolutions de leur outil ITSM.</p>
       <div class="actions">
         <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel de 30 min</a>
-        <a class="btn btn-ghost" href="#offres">Voir les offres et tarifs</a>
+        <a class="btn btn-ghost" href="#offres">Voir les offres</a>
       </div>
     </div>
 
@@ -523,32 +526,32 @@
 <section id="offres" class="bloc">
   <div class="wrap">
     <div class="titre-bloc">
-      <h2>Offres et tarifs</h2>
-      <p>Chaque projet est différent : après un premier échange, je vous envoie un devis forfaitaire adapté à votre périmètre. Le conseil sur le choix des licences Freshservice est inclus.</p>
+      <h2>Offres</h2>
+      <p>Chaque projet est différent : après un premier échange, je vous envoie une proposition adaptée à votre périmètre. Le conseil sur le choix des licences Freshservice est inclus.</p>
     </div>
     <ul class="offres">
       <li class="offre offre-phare">
         <h3>Mise en place de Freshservice</h3>
         <p class="pour">Vous n'avez pas encore l'outil</p>
         <p class="desc">Cadrage de vos besoins, gestion des incidents et des demandes, portail utilisateurs, SLA, premières automatisations et formation de vos administrateurs. Vous repartez avec un service desk opérationnel.</p>
-        <div class="prix"><strong>dès 3 600 € HT</strong><span>forfait sur devis</span></div>
+        <p class="offre-pied"><a href="#contact">Parler de votre projet</a></p>
       </li>
       <li class="offre">
         <h3>Audit et plan d'action</h3>
         <p class="pour">Votre instance existe déjà</p>
         <p class="desc">Analyse de votre configuration actuelle, points de blocage, fonctionnalités inexploitées, et un plan d'action priorisé pour en tirer le meilleur.</p>
-        <div class="prix"><strong>dès 1 500 € HT</strong><span>forfait sur devis</span></div>
+        <p class="offre-pied"><a href="#contact">Demander un audit</a></p>
       </li>
       <li class="offre">
         <h3>Carnet de jours</h3>
         <p class="pour">10 jours valables 12 mois</p>
         <p class="desc">Des jours à utiliser quand vous en avez besoin : évolutions, workflows d'arrivée et de départ, intégrations, reprise de données, formation de nouveaux agents.</p>
-        <div class="prix"><strong>Sur devis</strong><span>tarif dégressif par rapport à la journée</span></div>
+        <p class="offre-pied"><a href="#contact">Discuter de vos besoins</a></p>
       </li>
     </ul>
     <ul class="conditions">
-      <li><strong>Besoin ponctuel</strong>Sur devis, à la journée ou à la demi-journée.</li>
-      <li><strong>Migration depuis un autre outil</strong>Sur devis, après un inventaire de l'existant.</li>
+      <li><strong>Besoin ponctuel</strong>À la journée ou à la demi-journée, pour une évolution ou un coup de main.</li>
+      <li><strong>Migration depuis un autre outil</strong>Je commence par un inventaire de l'existant pour décider de ce qui mérite d'être repris.</li>
       <li><strong>Où j'interviens</strong>À distance ou sur site en région lyonnaise et à Paris ; pour la Suisse, à distance avec des déplacements ponctuels.</li>
     </ul>
   </div>
@@ -704,7 +707,7 @@
     </div>
     <ul class="guides">
       <li><a href="/freshservice-vs-glpi"><strong>Freshservice ou GLPI&nbsp;: lequel choisir pour votre service desk&nbsp;?</strong><span>Coût réel, maintenance, fonctionnalités : les critères concrets pour choisir.</span><em>Lire le comparatif</em></a></li>
-      <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice&nbsp;?</strong><span>Licences par agent, coût de l'intégration et budgets types.</span><em>Lire le guide des prix</em></a></li>
+      <li><a href="/prix-mise-en-place-freshservice"><strong>Combien coûte une mise en place Freshservice&nbsp;?</strong><span>Licences par agent, et ce qui fait varier le coût de l'intégration.</span><em>Lire le guide des prix</em></a></li>
       <li><a href="/migrer-vers-freshservice"><strong>Migrer vers Freshservice&nbsp;: les étapes et les pièges à éviter</strong><span>Ce qu'il faut reprendre, ce qu'il vaut mieux laisser, et comment réussir la bascule.</span><em>Lire le guide de migration</em></a></li>
       <li><a href="/freshservice-vs-servicenow"><strong>Freshservice ou ServiceNow&nbsp;: lequel choisir pour votre ITSM&nbsp;?</strong><span>Tarifs, coût de mise en œuvre et administration : le bon outil selon votre taille.</span><em>Lire le comparatif</em></a></li>
       <li><a href="/automatiser-arrivee-depart-freshservice"><strong>Automatiser l'arrivée et le départ d'un collaborateur</strong><span>SIRH, validation du manager, tâches par équipe et coupure des accès.</span><em>Lire la méthode</em></a></li>
@@ -761,7 +764,7 @@
       </details>
       <details>
         <summary>Pouvez-vous migrer nos données depuis un autre outil&nbsp;?</summary>
-        <p>Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais un devis. Plus de détails dans le guide de migration.</p>
+        <p>Oui, depuis GLPI, EasyVista, ServiceNow ou même une boîte mail partagée. Je commence par un inventaire de l'existant pour décider ce qui mérite d'être repris, puis je vous fais une proposition. Plus de détails dans le guide de migration.</p>
       </details>
       <details>
         <summary>Freshservice peut-il servir au-delà de l&#x27;IT&nbsp;?</summary>
@@ -778,7 +781,7 @@
 <section id="contact" class="sombre contact">
   <div class="wrap">
     <h2>Parlons de votre projet Freshservice</h2>
-    <p>Réservez un appel en visio pour présenter votre besoin, ou écrivez-moi en quelques lignes : je vous réponds sous 48 heures avec une première estimation.</p>
+    <p>Réservez un appel en visio pour présenter votre besoin, ou écrivez-moi en quelques lignes : je vous réponds sous 48 heures avec un premier avis sur votre projet.</p>
     <div class="actions">
       <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ04fvmP1IqDKsEgOLjIV4FIxXdBvYW5DpWt4vyQrzxBA7TkV2al9As-sph015MERCpT0hANj-CD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réserver un appel de 30 min</a>
     </div>
